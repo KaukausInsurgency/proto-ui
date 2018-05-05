@@ -1,142 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<link rel="stylesheet" href="reset.css">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-$(function() {
-	$('.dropdown-content').addClass('nav-expanded');	// by default the ribbon is nav-expanded
-	$('body').addClass('nav-expanded');
-	
-	$('.nav-expander').click(function()
-	{
-		var expander_icon = $('.js-expander-icon');
-		if (expander_icon.hasClass('fa-angle-double-right'))	// expand the nav ribbon
-		{
-			expander_icon.removeClass('fa-angle-double-right');
-			expander_icon.addClass('fa-angle-double-left');
-			$('.sidenav').stop(true).animate({
-				width: $('.prop-nav').css('--max-width').trim()
-			}, 200, function()
-			{
-				$('.nav-text').show();
-			});
-			$('.dropdown-content').removeClass('nav-collapsed');
-			$('.dropdown-content').addClass('nav-expanded');
-			$('body').removeClass('nav-collapsed');
-			$('body').addClass('nav-expanded');
-		}
-		else  // collapse the nav ribbon
-		{
-			expander_icon.removeClass('fa-angle-double-left');
-			expander_icon.addClass('fa-angle-double-right');	
-			$('.nav-text').hide();		
-			$('.sidenav').stop(true).animate({
-				width: $('.prop-nav').css('--min-width').trim()
-			}, 200);
-			$('.dropdown-content').removeClass('nav-expanded');			
-			$('.dropdown-content').addClass('nav-collapsed');
-			$('body').removeClass('nav-expanded');
-			$('body').addClass('nav-collapsed');
-		}
-		
-		
-		
-	});   
-});
-
-
-</script>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+	 crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="navigation.js"></script>
+	<script src="chat.js"></script>
 </head>
+
 <body>
-<!-- Side navigation -->
-<div>
-	<span class="prop-nav"/>
-</div>
-<div class="sidenav">
-  <div class="nav-expander">
-	<span>
-		<i class="fas fa-angle-double-left navicon js-expander-icon"></i>
-	</span>
-  </div>
-  <a href="#">
-	<i class="fas fa-address-book navicon"></i>
-	<span class="nav-text">KI</span>
-  </a>
-  <a href="#">
-	<i class="fas fa-address-book navicon"></i>
-	<span class="nav-text">Servers</span>
-  </a>
-  <div class="dropdown">
-	<a href="#">
-		<i class="fas fa-address-book navicon"></i>
-		<span class="nav-text">Stats</span>
-	</a>
-	<div class="dropdown-content">
-		<a href="#"><i class="fas fa-address-book navicon"></i>
-			<span>Player Stats</span>
-		</a>
-		<a href="#"><i class="fas fa-address-book navicon"></i>
-			<span>Server Stats</span>
-		</a>
+	<!-- Side navigation -->
+	<div>
+		<span class="prop-nav" />
 	</div>
-  </div>
-  <a href="#">
-	<i class="fas fa-address-book navicon"></i>
-	<span class="nav-text">Forums</span>
-  </a>
-  <a href="#">
-	<i class="fas fa-address-book navicon"></i>
-	<span class="nav-text">Donate</span>
-  </a>
-  <a href="#">
-	<i class="fas fa-address-book navicon"></i>
-	<span class="nav-text">GitHub</span>
-  </a>
-  <a href="#">
-	<i class="fas fa-address-book navicon"></i>
-	<span class="nav-text">DCS Post</span>
-  </a>
-</div>
-
-<!-- Page content -->
-<div class="main">
-	<div class="header">HEADER
-The standard Lorem Ipsum passage, used since the 1500s
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-
-Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</div>
-
-	<div class="info scrollable">SERVER INFO
-The standard Lorem Ipsum passage, used since the 1500s
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-
-Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</div>
-	<div class="live-map">LIVEMAP
-		<div class="footer">
-			<div class="chat">CHAT</div>
-			<div class="notifications">GAME NOTIFICATIONS
-				<div class="notifications-content">
-					<a href="#"><i class="fas fa-address-book navicon"></i>
-						<span>Player 1: Hit Player 2 with AIM-104 AMMRAAM</span>
-					</a>
-					<a href="#"><i class="fas fa-address-book navicon"></i>
-						<span>Player 2 Crashed</span>
-					</a>
-				</div>
+	<div class="sidenav">
+		<div class="nav-expander">
+			<span>
+				<i class="fas fa-angle-double-left navicon js-expander-icon"></i>
+			</span>
+		</div>
+		<a href="#">
+			<i class="fas fa-address-book navicon"></i>
+			<span class="nav-text">KI</span>
+		</a>
+		<a href="#">
+			<i class="fas fa-address-book navicon"></i>
+			<span class="nav-text">Servers</span>
+		</a>
+		<div class="dropdown">
+			<a href="#">
+				<i class="fas fa-address-book navicon"></i>
+				<span class="nav-text">Stats</span>
+			</a>
+			<div class="dropdown-content">
+				<a href="#">
+					<i class="fas fa-address-book navicon"></i>
+					<span>Player Stats</span>
+				</a>
+				<a href="#">
+					<i class="fas fa-address-book navicon"></i>
+					<span>Server Stats</span>
+				</a>
 			</div>
-			<div class="missions">MISSIONS</div>
-		</div>	
+		</div>
+		<a href="#">
+			<i class="fas fa-address-book navicon"></i>
+			<span class="nav-text">Forums</span>
+		</a>
+		<a href="#">
+			<i class="fas fa-address-book navicon"></i>
+			<span class="nav-text">Donate</span>
+		</a>
+		<a href="#">
+			<i class="fas fa-address-book navicon"></i>
+			<span class="nav-text">GitHub</span>
+		</a>
+		<a href="#">
+			<i class="fas fa-address-book navicon"></i>
+			<span class="nav-text">DCS Post</span>
+		</a>
 	</div>
-	<div class="right-column">PLAYERS
+
+	<!-- Page content -->
+	<div class="main">
+		<div class="header-layout">HEADER The standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+			sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+			ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+			mollit anim id est laborum." Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC "Sed ut perspiciatis
+			unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+			inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+			aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
+			quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+			incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem
+			ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui
+			in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</div>
+
+		<div class="info-layout scrollable">
+			<h2 style="font-size: 3em; text-align: center;">Server</h2>
+			<div><h3>Status:</h3> Online</div>
+			<div><h3>Address:</h3> 158.69.241.110</div>
+			<div>
+				<h3>30 Online</h3>
+				<h3 style="color:red">12 Red</h3>
+				<h3 style="color:blue">14 Blue</h3>
+				<h3 style="color:gray">4 Spectators</h3>
+			</div>
+		</div>
+		<div class="live-map-layout">LIVEMAP
+			<div class="footer">
+				<div class="chat-layout">CHAT
+					<div class="chat-window live-map-footer-content">
+						<div class="chat-message">
+							<span class="chat-username chat-redfor">Player 1</span>
+							:
+							<span class="chat-body">Some Sample Redfor test to be tested out on a screen</span>
+						</div>
+						<div class="chat-message">
+								<span class="chat-username chat-blufor">Player 2</span>
+								:
+								<span class="chat-body">Some Sample Blufor text</span>
+						</div>
+						<div class="chat-message">
+								<span class="chat-username chat-neutral">Player 3</span>
+								:
+								<span class="chat-body">Some Sample Neutral text</span>
+						</div>
+						<div class="chat-message">
+								<span class="chat-username chat-blufor">Player 4</span>
+								:
+								<span class="chat-body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat eius totam, minus eaque quod vitae consectetur sed cumque reprehenderit aliquid?</span>
+						</div>
+					</div>
+
+				</div>
+				<div class="notifications-layout">GAME NOTIFICATIONS
+					<div class="notifications-content live-map-footer-content">
+						<a href="#">
+							<i class="fas fa-address-book navicon"></i>
+							<span>Player 1: Hit Player 2 with AIM-104 AMMRAAM</span>
+						</a>
+						<a href="#">
+							<i class="fas fa-address-book navicon"></i>
+							<span>Player 2 Crashed</span>
+						</a>
+					</div>
+				</div>
+				<div class="missions-layout">MISSIONS</div>
+			</div>
+		</div>
+		<div class="right-column">PLAYERS
+		</div>
 	</div>
-</div>
-</div>
-<div id="footer">FOOTER
+	</div>
+	<div id="footer">FOOTER
 		<div style="position:absolute; left:160px; width:160px; background-color:green;">
 			DONATE
 		</div>
@@ -148,4 +148,5 @@ Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
 		</div>
 	</div>
 </body>
+
 </html>

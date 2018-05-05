@@ -1,15 +1,4 @@
-$font-stack: Helvetica, sans-serif;
-$nav-font-size: 1.1em;
-$nav-font-color: #818181;
-$nav-font-hover: #f1f1f1;
-$nav-background-color: #111;
-$nav-background-color-hover: #444;
 $nav-item-padding: 10px 8px 10px 16px;
-$nav-width-expanded: 160px;
-$nav-width-collapsed: 50px;
-
-
-
 $header-height: 100px;
 $main-columns-height: 500px;
 $live-map-footer-height: 30px;
@@ -19,19 +8,13 @@ $live-map-footer-height: 30px;
 	float:left;
 }
 
-%live-map-footer-content {
+.live-map-footer-content {
 	display: none;
     position: absolute;		/* make the positioning absolute relative to the parent */
 	bottom: $live-map-footer-height;	/* offset to be on top of the notifications div */	
 }
 
-.scrollable {
-	overflow: auto;
-}
 
-.center {
-	margin: auto;
-}
 
 .main {
 	overflow: hidden;		/* this makes the containers size expand to match the total size of all it's child elements */
@@ -39,20 +22,21 @@ $live-map-footer-height: 30px;
 	height: 100%;
 }
 
-.header {
+.header-layout {
 	width:100%; 
 	height:$header-height;
 }
 
-.info {
+.info-layout {
 	@extend %main-column;
-	background-color:blue; 
+	background-color:rgba($color: #1406d8, $alpha: 0.45); 
 	width:200px; 
 	height:500px;  
 	color:white; 
+	padding: 1em 1em;
 }
 
-.live-map {
+.live-map-layout {
 	@extend %main-column;
 	background-color:red; 
 	width:650px; 
@@ -61,7 +45,7 @@ $live-map-footer-height: 30px;
 	position:relative;
 }
 
-.live-map div.footer {
+.live-map-layout div.footer {
 	position:absolute; 
 	left:0px; 
 	bottom:0px; 
@@ -78,14 +62,15 @@ $live-map-footer-height: 30px;
 	color:white;
 }
 
-.chat {
+.chat-layout {
 	@extend %main-column;
 	width:33%; 
 	height: 100%; 
 	background:green;
+	position:relative;
 }
 
-.notifications {
+.notifications-layout {
 	@extend %main-column;
 	width:33%; 
 	height: 100%; 
@@ -93,11 +78,11 @@ $live-map-footer-height: 30px;
 }
 
 
-.notifications:hover .notifications-content {
+.notifications-layout:hover .notifications-content {
     display: block; 
 }
 
-.missions {
+.missions-layout {
 	@extend %main-column;
 	width:34%; 
 	height: 100%; 
@@ -106,18 +91,17 @@ $live-map-footer-height: 30px;
 
 /* Dropdown Content (Hidden by Default) */
 .notifications-content {
-    @extend %live-map-footer-content;
-    background-color: $nav-background-color; 
+    background-color: #333; 
     width: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 	
 	a {
-		color: $nav-font-color;
+		color: white;
 		padding: $nav-item-padding;
 		text-decoration: none;
 		display: block;
 		overflow:visible;
-		font-size: $nav-font-size;
+		font-size: 1em;
 	}
 }

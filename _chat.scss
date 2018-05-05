@@ -1,0 +1,56 @@
+$chat-neutral-color: #9b9b9b;
+$chat-redfor-color: #e85a5a;
+$chat-blufor-color: #5a8be8;
+$font-pack: Raleway,sans-serif;
+
+.chat-window {
+    font-family: $font-pack;
+    font-size: .8em;
+    line-height: 1.5;
+    width: 20vw;
+    height: 20vh;
+    padding: 1em;
+    background: rgba(0,0,0,1); 
+    opacity: 0.85;
+    transition: opacity .1s;
+    border: 10px solid transparent;
+
+    overflow-y: scroll;
+}
+
+.chat-layout:hover .chat-window {
+    display: block; 
+    transition-delay:1s;
+}
+
+.chat-redfor {
+    color: $chat-redfor-color;
+}
+
+.chat-blufor {
+    color: $chat-blufor-color;
+}
+
+.chat-neutral {
+    color: $chat-neutral-color;
+}
+
+.chat-username {
+    font: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: 700; 
+}
+
+.chat-body {
+    font: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: #ebebeb;
+}
+
+.chat-message {
+    margin: .8em 0;
+    display: block;
+}
+

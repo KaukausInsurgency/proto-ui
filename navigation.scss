@@ -1,0 +1,130 @@
+$font-stack: Helvetica, sans-serif;
+$nav-font-size: 1.1em;
+$nav-font-color: #818181;
+$nav-font-hover: #f1f1f1;
+$nav-background-color: #111;
+$nav-background-color-hover: #444;
+$nav-item-padding: 10px 8px 10px 16px;
+$nav-width-expanded: 160px;
+$nav-width-collapsed: 50px;
+
+body {
+	font-family: $font-stack;
+	position: relative;		/* dont make this fixed - otherwise you cant scroll */
+	overflow:auto;
+
+	&.nav-expanded {
+		left: $nav-width-expanded;	/* add a left offset that is outside of the nav-bar width */
+	}
+	
+	&.nav-collapsed {
+		left: $nav-width-collapsed;	/* add a left offset that is outside of the nav-bar width */
+	}
+	
+}
+
+.prop-nav {
+	#{--max-width}:$nav-width-expanded;
+	#{--min-width}:$nav-width-collapsed;
+	display: none;
+}
+
+.nav-expander {
+	padding: $nav-item-padding;
+	text-decoration: none;
+	font-size: $nav-font-size;
+	color: $nav-font-color;
+	display: block;
+}
+
+/* The sidebar menu */
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: $nav-width-expanded; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: $nav-background-color; /* Black */
+	
+	a {
+		padding: $nav-item-padding;
+		text-decoration: none;
+		font-size: $nav-font-size;
+		color: $nav-font-color;
+		display: block;
+	}
+	
+	a:hover {
+		color: $nav-font-hover;
+		background-color: $nav-background-color-hover;
+	}
+}
+
+.navicon {
+	padding-right: 15px;
+}
+
+/* The container div - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; 
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;		/* make the positioning absolute relative to the parent */
+	top: 0px;	/* be at the same height as the parent element */	
+    background-color: $nav-background-color; 
+    min-width: $nav-width-expanded;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+	
+	a {
+		color: $nav-font-color;
+		padding: $nav-item-padding;
+		text-decoration: none;
+		display: block;
+		overflow:visible;
+		font-size: $nav-font-size;
+	}
+	
+	a:hover {
+		background-color: $nav-background-color-hover;
+		color: $nav-font-hover;
+	}
+	
+	&.nav-expanded {
+		left: $nav-width-expanded;	/* add a left offset that is outside of the nav-bar width */
+	}
+	
+	&.nav-collapsed {
+		left: $nav-width-collapsed;	/* add a left offset that is outside of the nav-bar width */
+	}
+}
+
+
+#footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+   background:yellow;
+}
+
+.main {
+	overflow: hidden;		/* this makes the containers size expand to match the total size of all it's child elements */
+	margin-bottom: 20px;	/* this somehow prevents the bottom of the layout from going underneath the fixed footer ribbon */
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}

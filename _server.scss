@@ -1,0 +1,123 @@
+$font-stack: Helvetica, sans-serif;
+$nav-font-size: 1.1em;
+$nav-font-color: #818181;
+$nav-font-hover: #f1f1f1;
+$nav-background-color: #111;
+$nav-background-color-hover: #444;
+$nav-item-padding: 10px 8px 10px 16px;
+$nav-width-expanded: 160px;
+$nav-width-collapsed: 50px;
+
+
+
+$header-height: 100px;
+$main-columns-height: 500px;
+$live-map-footer-height: 30px;
+
+%main-column {
+	display:block; 
+	float:left;
+}
+
+%live-map-footer-content {
+	display: none;
+    position: absolute;		/* make the positioning absolute relative to the parent */
+	bottom: $live-map-footer-height;	/* offset to be on top of the notifications div */	
+}
+
+.scrollable {
+	overflow: auto;
+}
+
+.center {
+	margin: auto;
+}
+
+.main {
+	overflow: hidden;		/* this makes the containers size expand to match the total size of all it's child elements */
+	margin-bottom: 30px;	/* this somehow prevents the bottom of the layout from going underneath the fixed footer ribbon */
+	height: 100%;
+}
+
+.header {
+	width:100%; 
+	height:$header-height;
+}
+
+.info {
+	@extend %main-column;
+	background-color:blue; 
+	width:200px; 
+	height:500px;  
+	color:white; 
+}
+
+.live-map {
+	@extend %main-column;
+	background-color:red; 
+	width:650px; 
+	height: $main-columns-height; 
+	color:white; 
+	position:relative;
+}
+
+.live-map div.footer {
+	position:absolute; 
+	left:0px; 
+	bottom:0px; 
+	height:$live-map-footer-height; 
+	width:100%; 
+	background:yellow;
+}
+
+.right-column {
+	@extend %main-column;
+	background-color:purple; 
+	width:200px; 
+	height: $main-columns-height; 
+	color:white;
+}
+
+.chat {
+	@extend %main-column;
+	width:33%; 
+	height: 100%; 
+	background:green;
+}
+
+.notifications {
+	@extend %main-column;
+	width:33%; 
+	height: 100%; 
+	background:orange;
+}
+
+
+.notifications:hover .notifications-content {
+    display: block; 
+}
+
+.missions {
+	@extend %main-column;
+	width:34%; 
+	height: 100%; 
+	background:gray;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.notifications-content {
+    @extend %live-map-footer-content;
+    background-color: $nav-background-color; 
+    width: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+	
+	a {
+		color: $nav-font-color;
+		padding: $nav-item-padding;
+		text-decoration: none;
+		display: block;
+		overflow:visible;
+		font-size: $nav-font-size;
+	}
+}

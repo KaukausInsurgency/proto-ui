@@ -11,7 +11,7 @@ $nav-width-collapsed: 50px;
 body {
 	font-family: $font-stack;
 	position: relative;		/* dont make this fixed - otherwise you cant scroll */
-	overflow:auto;
+	overflow: auto;
 
 	&.nav-expanded {
 		left: $nav-width-expanded;	/* add a left offset that is outside of the nav-bar width */

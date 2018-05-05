@@ -8,6 +8,10 @@ $live-map-footer-height: 30px;
 	float:left;
 }
 
+%main-column-mobile {
+	float: none;
+}
+
 .live-map-footer-content {
 	display: none;
     position: absolute;		/* make the positioning absolute relative to the parent */
@@ -25,6 +29,7 @@ $live-map-footer-height: 30px;
 .header-layout {
 	width:100%; 
 	height:$header-height;
+	overflow:hidden;
 }
 
 .info-layout {
@@ -33,7 +38,7 @@ $live-map-footer-height: 30px;
 	width:200px; 
 	height:500px;  
 	color:white; 
-	padding: 1em 1em;
+	padding: 0.5em 0.5em;
 }
 
 .live-map-layout {

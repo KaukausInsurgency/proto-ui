@@ -1,6 +1,5 @@
 $(function() {
 	$('.dropdown-content').addClass('nav-expanded');	// by default the ribbon is nav-expanded
-	$('body').addClass('nav-expanded');
 	
 	$('.nav-expander').click(function()
 	{
@@ -17,8 +16,6 @@ $(function() {
 			});
 			$('.dropdown-content').removeClass('nav-collapsed');
 			$('.dropdown-content').addClass('nav-expanded');
-			$('body').removeClass('nav-collapsed');
-			$('body').addClass('nav-expanded');
 		}
 		else  // collapse the nav ribbon
 		{
@@ -30,8 +27,6 @@ $(function() {
 			}, 200);
 			$('.dropdown-content').removeClass('nav-expanded');			
 			$('.dropdown-content').addClass('nav-collapsed');
-			$('body').removeClass('nav-expanded');
-			$('body').addClass('nav-collapsed');
 		}		
 	});   
 });

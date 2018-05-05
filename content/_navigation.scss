@@ -12,15 +12,7 @@ body {
 	font-family: $font-stack;
 	position: relative;		/* dont make this fixed - otherwise you cant scroll */
 	overflow: auto;
-
-	&.nav-expanded {
-		left: $nav-width-expanded;	/* add a left offset that is outside of the nav-bar width */
-	}
-	
-	&.nav-collapsed {
-		left: $nav-width-collapsed;	/* add a left offset that is outside of the nav-bar width */
-	}
-	
+	left: $nav-width-collapsed;	/* add a left offset that is outside of the nav-bar width */
 }
 
 .prop-nav {

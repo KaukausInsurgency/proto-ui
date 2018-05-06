@@ -20,21 +20,21 @@
 	<div class="sidenav">
 		<div class="nav-expander">
 			<span>
-				<i class="fas fa-angle-double-left navicon js-expander-icon"></i>
+				<i class="fas fa-angle-double-right navicon js-expander-icon"></i>
 			</span>
 		</div>
 		<a href="#">
 			<i class="fas fa-address-book navicon"></i>
-			<span class="nav-text">KI</span>
+			<span class="js-nav-text">KI</span>
 		</a>
 		<a href="#">
 			<i class="fas fa-address-book navicon"></i>
-			<span class="nav-text">Servers</span>
+			<span class="js-nav-text">Servers</span>
 		</a>
 		<div class="dropdown">
 			<a href="#">
 				<i class="fas fa-address-book navicon"></i>
-				<span class="nav-text">Stats</span>
+				<span class="js-nav-text">Stats</span>
 			</a>
 			<div class="dropdown-content">
 				<a href="#">
@@ -49,19 +49,19 @@
 		</div>
 		<a href="#">
 			<i class="fas fa-address-book navicon"></i>
-			<span class="nav-text">Forums</span>
+			<span class="js-nav-text">Forums</span>
 		</a>
 		<a href="#">
 			<i class="fas fa-address-book navicon"></i>
-			<span class="nav-text">Donate</span>
+			<span class="js-nav-text">Donate</span>
 		</a>
 		<a href="#">
 			<i class="fas fa-address-book navicon"></i>
-			<span class="nav-text">GitHub</span>
+			<span class="js-nav-text">GitHub</span>
 		</a>
 		<a href="#">
 			<i class="fas fa-address-book navicon"></i>
-			<span class="nav-text">DCS Post</span>
+			<span class="js-nav-text">DCS Post</span>
 		</a>
 	</div>
 
@@ -83,9 +83,9 @@
 		<div class="info-layout scrollable">
 			<h2 style="font-size: 3em; text-align: center;">Server</h2>
 			<div class="progress-bar">
-					<div style="font-size: 0.5em; text-align:center;">Time Remaining: 03:00:00</div>
-					<span style="width: 25%"></span>
-		  </div>
+				<div style="font-size: 0.5em; text-align:center;">Time Remaining: 03:00:00</div>
+				<span style="width: 25%"></span>
+			</div>
 			<div class="dash-row">
 				<div class="dash-columns">
 					<div class="dash-header dash-large-font">Online</div>
@@ -160,7 +160,84 @@
 				<div class="missions-layout">MISSIONS</div>
 			</div>
 		</div>
-		<div class="right-column">PLAYERS
+		<div>
+			<span class="prop-server-nav" />
+		</div>
+		<div class="server-nav">
+			<div class="server-dropdown">
+				<a href="#">
+					<i class="fas fa-address-book navicon"></i>
+				</a>
+				<div class="server-dropdown-content">
+					<a href="#">
+						<i class="fas fa-address-book navicon"></i>
+						<span>Discord</span>
+					</a>
+				</div>
+				<div class="server-flyout-content">
+					<iframe src="https://discordapp.com/widget?id=410076123242954753&theme=dark" width="300" height="500" allowtransparency="true"
+					 frameborder="0"></iframe>
+				</div>
+			</div>
+			<div class="server-dropdown">
+				<a href="#">
+					<i class="fas fa-address-book navicon"></i>
+				</a>
+				<div class="server-dropdown-content">
+					<a href="#">
+						<i class="fas fa-address-book navicon"></i>
+						<span>Players</span>
+					</a>
+				</div>
+				<div class="server-flyout-content">
+					<table id="players-table" class="table table-bordered" style="width: 60%;" align="center">
+						<caption style="text-align:center">
+							<b>Online Players</b>
+						</caption>
+						<thead>
+							<tr>
+								<th>
+									<a>Role</a>
+								</th>
+								<th>
+									<a>Player Name</a>
+								</th>
+								<th>
+									<a>Side</a>
+								</th>
+								<th>
+									<a>Lives</a>
+								</th>
+								<th>
+									<a>Ping</a>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+								<td>
+									<i class="fas fa-fighter-jet"></i>
+								</td>
+								<td>laggygamerz_server</td>
+								<td>Neutral</td>
+								<td>5</td>
+								<td>0</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="server-dropdown">
+				<a href="#">
+					<i class="fas fa-address-book navicon"></i>
+				</a>
+				<div class="server-dropdown-content">
+					<a href="#">
+						<i class="fas fa-address-book navicon"></i>
+						<span>Stats</span>
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
 	</div>

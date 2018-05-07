@@ -23,6 +23,16 @@ $footer-background-color-hover: #444;
 	position:relative;
 }
 
+/* footer on the live map */
+.live-map-layout div.footer {
+	position:absolute; 
+	left:0px; 
+	bottom:0px; 
+    height:$live-map-footer-height; 
+    @include calc( width, 80%, '100% - #{$live-map-nav-width}');
+	background:black;
+}
+
 .live-map-footer-content {
 	display: none;
     position: absolute;		/* make the positioning absolute relative to the parent */
@@ -32,15 +42,6 @@ $footer-background-color-hover: #444;
 .live-map-footer-item {
 	top: 20%;
 	position: relative;
-}
-
-.live-map-layout div.footer {
-	position:absolute; 
-	left:0px; 
-	bottom:0px; 
-    height:$live-map-footer-height; 
-    @include calc( width, 80%, '100% - #{$live-map-nav-width}');
-	background:black;
 }
 
 .chat-layout {

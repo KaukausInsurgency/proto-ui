@@ -24,25 +24,27 @@ $nav-width-collapsed: 50px;
 
 /* The sidebar menu */
 .server-nav {
-    @extend %main-column;
+    @extend %block-float;
 	height: $main-columns-height; 
+	position: absolute;
 	color:white;
     width: $nav-width-collapsed; /* Set the width of the sidebar */
     /*position: fixed;  Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
-    /* top: 0; Stay at the top */
-    /* left: 0; */
+	left: 650px;
+	top: 0px;
     background-color: $nav-background-color; /* Black */
 	
-	a {
+	span {
 		padding: $nav-item-padding;
 		text-decoration: none;
 		font-size: $nav-font-size;
 		color: $nav-font-color;
 		display: block;
+		cursor: context-menu;
 	}
 	
-	a:hover {
+	span:hover {
 		color: $nav-font-hover;
 		background-color: $nav-background-color-hover;
 	}
@@ -72,17 +74,13 @@ $nav-width-collapsed: 50px;
     min-width: $nav-width-expanded;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+	color: $nav-font-color;
+	text-decoration: none;
+	cursor: context-menu;
+	overflow:visible;
+	font-size: $nav-font-size;
 	
-	a {
-		color: $nav-font-color;
-		padding: $nav-item-padding;
-		text-decoration: none;
-		display: block;
-		overflow:visible;
-		font-size: $nav-font-size;
-	}
-	
-	a:hover {
+	&:hover {
 		background-color: $nav-background-color-hover;
 		color: $nav-font-hover;
 	}

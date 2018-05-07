@@ -2,17 +2,7 @@ $nav-item-padding: 10px 8px 10px 16px;
 $header-height: 100px;
 $main-columns-height: 500px;
 $live-map-footer-height: 30px;
-
-%main-column {
-	display:block; 
-	float:left;
-}
-
-.live-map-footer-content {
-	display: none;
-    position: absolute;		/* make the positioning absolute relative to the parent */
-	bottom: $live-map-footer-height;	/* offset to be on top of the notifications div */	
-}
+$live-map-nav-width: 50px;
 
 
 
@@ -29,80 +19,12 @@ $live-map-footer-height: 30px;
 }
 
 .info-layout {
-	@extend %main-column;
-	background-color:rgba($color: #1406d8, $alpha: 0.45); 
+	@extend %block-float;
+	background-color:rgba($color: #acacb8, $alpha: 0.45); 
 	width:200px; 
-	height:500px;  
+	height:$main-columns-height;  
 	color:white; 
 	padding: 0.5em 0.5em;
 }
 
-.live-map-layout {
-	@extend %main-column;
-	background-color:red; 
-	width:650px; 
-	height: $main-columns-height; 
-	color:white; 
-	position:relative;
-}
 
-.live-map-layout div.footer {
-	position:absolute; 
-	left:0px; 
-	bottom:0px; 
-	height:$live-map-footer-height; 
-	width:100%; 
-	background:yellow;
-}
-
-.right-column {
-	@extend %main-column;
-	background-color:purple; 
-	width:80px; 
-	height: $main-columns-height; 
-	color:white;
-}
-
-.chat-layout {
-	@extend %main-column;
-	width:33%; 
-	height: 100%; 
-	background:green;
-	position:relative;
-}
-
-.notifications-layout {
-	@extend %main-column;
-	width:33%; 
-	height: 100%; 
-	background:orange;
-}
-
-
-.notifications-layout:hover .notifications-content {
-    display: block; 
-}
-
-.missions-layout {
-	@extend %main-column;
-	width:34%; 
-	height: 100%; 
-	background:gray;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.notifications-content {
-    background-color: #333; 
-    width: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-	
-	a {
-		color: white;
-		padding: $nav-item-padding;
-		text-decoration: none;
-		display: block;
-		overflow:visible;
-		font-size: 1em;
-	}
-}

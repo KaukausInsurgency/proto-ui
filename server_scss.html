@@ -8,6 +8,7 @@
 	 crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="scripts/navigation.js"></script>
+	<script src="scripts/server-navigation.js"></script>
 	<script src="scripts/chat.js"></script>
 	<script src="scripts/dash.js"></script>
 </head>
@@ -15,52 +16,50 @@
 <body>
 	<!-- Side navigation -->
 	<div>
-		<span class="prop-nav" />
+		<span class="prop-vnav" />
 	</div>
-	<div class="sidenav">
-		<div class="nav-expander">
-			<span>
-				<i class="fas fa-angle-double-right navicon js-expander-icon"></i>
-			</span>
+	<div class="vnav">
+		<div class="vnav-btn-expander">
+			<i class="vnav-icon"></i>
 		</div>
 		<a href="#">
-			<i class="fas fa-address-book navicon"></i>
+			<i class="fas fa-address-book vnav-icon"></i>
 			<span class="js-nav-text">KI</span>
 		</a>
 		<a href="#">
-			<i class="fas fa-address-book navicon"></i>
+			<i class="fas fa-address-book vnav-icon"></i>
 			<span class="js-nav-text">Servers</span>
 		</a>
-		<div class="dropdown">
+		<div class="vnav-dropdown">
 			<a href="#">
-				<i class="fas fa-address-book navicon"></i>
+				<i class="fas fa-address-book vnav-icon"></i>
 				<span class="js-nav-text">Stats</span>
 			</a>
-			<div class="dropdown-content">
+			<div class="vnav-dropdown-content">
 				<a href="#">
-					<i class="fas fa-address-book navicon"></i>
+					<i class="fas fa-address-book vnav-icon"></i>
 					<span>Player Stats</span>
 				</a>
 				<a href="#">
-					<i class="fas fa-address-book navicon"></i>
+					<i class="fas fa-address-book vnav-icon"></i>
 					<span>Server Stats</span>
 				</a>
 			</div>
 		</div>
 		<a href="#">
-			<i class="fas fa-address-book navicon"></i>
+			<i class="fas fa-address-book vnav-icon"></i>
 			<span class="js-nav-text">Forums</span>
 		</a>
 		<a href="#">
-			<i class="fas fa-address-book navicon"></i>
+			<i class="fas fa-address-book vnav-icon"></i>
 			<span class="js-nav-text">Donate</span>
 		</a>
 		<a href="#">
-			<i class="fas fa-address-book navicon"></i>
+			<i class="fas fa-address-book vnav-icon"></i>
 			<span class="js-nav-text">GitHub</span>
 		</a>
 		<a href="#">
-			<i class="fas fa-address-book navicon"></i>
+			<i class="fas fa-address-book vnav-icon"></i>
 			<span class="js-nav-text">DCS Post</span>
 		</a>
 	</div>
@@ -117,129 +116,146 @@
 				</div>
 			</div>
 		</div>
-		<div class="live-map-layout">LIVEMAP
+		<div class="live-map-layout">
+			<div class="live-map" style="width: 650px; height: 470px; background-color:aquamarine;">
+				LIVE MAP
+			</div>
 			<div class="footer">
-				<div class="chat-layout">CHAT
+				<div class="chat-layout">
+					<i class="fas fa-address-book navicon live-map-footer-item"></i>
+					<span class="live-map-footer-item">Chat</span>
 					<div class="chat-window live-map-footer-content">
-						<div class="chat-message">
-							<span class="chat-username chat-redfor">Player 1</span>
-							:
-							<span class="chat-body">Some Sample Redfor test to be tested out on a screen</span>
-						</div>
-						<div class="chat-message">
-							<span class="chat-username chat-blufor">Player 2</span>
-							:
-							<span class="chat-body">Some Sample Blufor text</span>
-						</div>
-						<div class="chat-message">
-							<span class="chat-username chat-neutral">Player 3</span>
-							:
-							<span class="chat-body">Some Sample Neutral text</span>
-						</div>
-						<div class="chat-message">
-							<span class="chat-username chat-blufor">Player 4</span>
-							:
-							<span class="chat-body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat eius totam, minus eaque quod vitae consectetur sed
-								cumque reprehenderit aliquid?</span>
+						<div class="chat-title">In-Game Chat</div>
+						<div class="chat-message-body">
+							<div class="chat-message">
+								<span class="chat-username chat-redfor">Player 1</span>
+								<span class="chat-body"> : Some Sample Redfor test to be tested out on a screen</span>
+							</div>
+							<div class="chat-message">
+								<span class="chat-username chat-blufor">Player 2</span>
+								<span class="chat-body"> : Some Sample Blufor text</span>
+							</div>
+							<div class="chat-message">
+								<span class="chat-username chat-neutral">Player 3</span>
+								<span class="chat-body"> : Some Sample Neutral text</span>
+							</div>
+							<div class="chat-message">
+								<span class="chat-username chat-blufor">Player 4</span>
+								<span class="chat-body"> : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat eius totam, minus eaque quod vitae consectetur
+									sed cumque reprehenderit aliquid?</span>
+							</div>
 						</div>
 					</div>
 
 				</div>
-				<div class="notifications-layout">GAME NOTIFICATIONS
-					<div class="notifications-content live-map-footer-content">
-						<a href="#">
-							<i class="fas fa-address-book navicon"></i>
-							<span>Player 1: Hit Player 2 with AIM-104 AMMRAAM</span>
-						</a>
-						<a href="#">
-							<i class="fas fa-address-book navicon"></i>
-							<span>Player 2 Crashed</span>
-						</a>
+				<div class="chat-layout">
+					<i class="fas fa-address-book navicon live-map-footer-item"></i>
+					<span class="live-map-footer-item">Notifications</span>
+					<div class="chat-window live-map-footer-content">
+						<div class="chat-title">Action Log</div>
+						<div class="chat-message-body">
+							<div class="chat-message">
+								<span class="chat-username chat-neutral">12:23 PM</span>
+								<span class="chat-body"> : Player 1 Hit Player 2 with AIM-104 AMMRAAM</span>
+							</div>
+							<div class="chat-message">
+								<span class="chat-username chat-neutral">12:24 PM</span>
+								<span class="chat-body"> : Player 2 Crashed</span>
+							</div>
+							<div class="chat-message">
+								<span class="chat-username chat-neutral">1:00 PM</span>
+								<span class="chat-body"> : Player 1 Landed at Sochi</span>
+							</div>
+							<div class="chat-message">
+								<span class="chat-username chat-neutral">2:34 PM</span>
+								<span class="chat-body"> : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat eius totam, minus eaque quod vitae consectetur
+									sed cumque reprehenderit aliquid?</span>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class="missions-layout">MISSIONS</div>
-			</div>
-		</div>
-		<div>
-			<span class="prop-server-nav" />
-		</div>
-		<div class="server-nav">
-			<div class="server-dropdown">
-				<a href="#">
-					<i class="fas fa-address-book navicon"></i>
-				</a>
-				<div class="server-dropdown-content">
-					<a href="#">
-						<i class="fas fa-address-book navicon"></i>
-						<span>Discord</span>
-					</a>
-				</div>
-				<div class="server-flyout-content">
-					<iframe src="https://discordapp.com/widget?id=410076123242954753&theme=dark" width="300" height="500" allowtransparency="true"
-					 frameborder="0"></iframe>
+				<div class="missions-layout">
+					<i class="fas fa-address-book navicon live-map-footer-item"></i>
+					<span class="live-map-footer-item">Missions <a class="notification">5</a></span>
 				</div>
 			</div>
-			<div class="server-dropdown">
-				<a href="#">
-					<i class="fas fa-address-book navicon"></i>
-				</a>
-				<div class="server-dropdown-content">
-					<a href="#">
-						<i class="fas fa-address-book navicon"></i>
-						<span>Players</span>
-					</a>
-				</div>
-				<div class="server-flyout-content">
-					<table id="players-table" class="table table-bordered" style="width: 60%;" align="center">
-						<caption style="text-align:center">
-							<b>Online Players</b>
-						</caption>
-						<thead>
-							<tr>
-								<th>
-									<a>Role</a>
-								</th>
-								<th>
-									<a>Player Name</a>
-								</th>
-								<th>
-									<a>Side</a>
-								</th>
-								<th>
-									<a>Lives</a>
-								</th>
-								<th>
-									<a>Ping</a>
-								</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
-								<td>
-									<i class="fas fa-fighter-jet"></i>
-								</td>
-								<td>laggygamerz_server</td>
-								<td>Neutral</td>
-								<td>5</td>
-								<td>0</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+			<div>
+				<span class="prop-server-nav" />
 			</div>
-			<div class="server-dropdown">
-				<a href="#">
-					<i class="fas fa-address-book navicon"></i>
-				</a>
-				<div class="server-dropdown-content">
-					<a href="#">
+			<div class="server-nav">
+				<div class="server-dropdown">
+					<span>
 						<i class="fas fa-address-book navicon"></i>
-						<span>Stats</span>
-					</a>
+					</span>
+					<div class="server-dropdown-content">
+
+						<span>
+							<i class="fas fa-address-book navicon"></i>Discord</span>
+					</div>
+					<div class="server-flyout-content">
+						<iframe src="https://discordapp.com/widget?id=410076123242954753&theme=dark" width="300" height="500" allowtransparency="true"
+						 frameborder="0"></iframe>
+					</div>
+				</div>
+				<div class="server-dropdown">
+					<span>
+						<i class="fas fa-address-book navicon"></i>
+					</span>
+					<div class="server-dropdown-content">
+						<span>
+							<i class="fas fa-address-book navicon"></i>Players</span>
+					</div>
+					<div class="server-flyout-content">
+						<table id="players-table" class="table table-bordered" style="width: 60%;" align="center">
+							<caption style="text-align:center">
+								<b>Online Players</b>
+							</caption>
+							<thead>
+								<tr>
+									<th>
+										<a>Role</a>
+									</th>
+									<th>
+										<a>Player Name</a>
+									</th>
+									<th>
+										<a>Side</a>
+									</th>
+									<th>
+										<a>Lives</a>
+									</th>
+									<th>
+										<a>Ping</a>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+									<td>
+										<i class="fas fa-fighter-jet"></i>
+									</td>
+									<td>laggygamerz_server</td>
+									<td>Neutral</td>
+									<td>5</td>
+									<td>0</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="server-dropdown">
+					<span>
+						<i class="fas fa-address-book navicon"></i>
+					</span>
+					<div class="server-dropdown-content">
+						<span>
+							<i class="fas fa-address-book navicon"></i>Stats</span>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+
+
 	</div>
 	<div id="footer">FOOTER
 		<div style="position:absolute; left:160px; width:160px; background-color:green;">

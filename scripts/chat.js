@@ -1,7 +1,7 @@
 $(function() {
     $('.chat-layout').click(function()
     {
-        $('.chat-window').css('display','block');
+        $(this).children('.chat-window').css('display','block');
     });
 
     $("body").click
@@ -28,7 +28,7 @@ $(function() {
                     chat_faction = "chat-blufor";
 
                 obj.append("<div class='chat-message'><span class='chat-username " + 
-                    chat_faction + "'>" + username + "</span> : <span class='chat-body'>" +
+                    chat_faction + "'>" + username + "</span><span class='chat-body'> : " +
                     text + "</span></div>");
 
                 obj.animate({ scrollTop: obj.prop("scrollHeight")}, 1000);

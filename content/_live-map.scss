@@ -23,6 +23,12 @@ $footer-background-color-hover: #444;
 	position:relative;
 }
 
+.live-map {
+	width: 650px; 
+	height: 470px; 
+	background-color: $footer-background-color;
+}
+
 /* footer on the live map */
 .live-map-layout div.footer {
 	position:absolute; 
@@ -48,14 +54,14 @@ $footer-background-color-hover: #444;
 	@extend %block-float;
     @extend %live-map-footer-layout;
     cursor: context-menu;
-    @include color-regular-hover($footer-font-color, $footer-font-hover, $footer-background-color, $footer-background-color-hover);
+    @include property-regular-hover(color, $footer-font-color, $footer-font-hover);
 }
 
 .missions-layout {
 	@extend %block-float;
 	@extend %live-map-footer-layout;
     cursor: context-menu;
-    @include color-regular-hover($footer-font-color, $footer-font-hover, $footer-background-color, $footer-background-color-hover);
+    @include property-regular-hover(color, $footer-font-color, $footer-font-hover);
 }
 
 .notification {

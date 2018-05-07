@@ -30,7 +30,6 @@ $nav-width-collapsed: 50px;
 	color:white;
     width: $nav-width-collapsed; /* Set the width of the sidebar */
     /*position: fixed;  Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
 	left: 650px;
 	top: 0px;
     background-color: $nav-background-color; /* Black */

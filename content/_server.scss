@@ -1,10 +1,17 @@
 $nav-item-padding: 10px 8px 10px 16px;
-$header-height: 100px;
+$header-height: 250px;
+$server-header-font-pack: Raleway,sans-serif;
 $main-columns-height: 500px;
 $live-map-footer-height: 30px;
 $live-map-nav-width: 50px;
 
-
+html {
+	background: #979ca0; /* Old browsers */
+    background: -moz-linear-gradient(top, #979ca0 0%, #8f9597 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #979ca0 0%,#8f9597 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #979ca0 0%,#8f9597 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#979ca0', endColorstr='#8f9597',GradientType=0 ); /* IE6-9 */
+}
 
 .main {
 	overflow: hidden;		/* this makes the containers size expand to match the total size of all it's child elements */
@@ -13,9 +20,46 @@ $live-map-nav-width: 50px;
 }
 
 .header-layout {
-	width:100%; 
+	padding: 1em;
+	@include calc( width, 80%, '100% - #{$nav-width-collapsed}');	/* body needs to be shifted left of the vertical navbar */
 	height:$header-height;
 	overflow:hidden;
+	font-family: $server-header-font-pack;
+
+	h1 {
+		font-size: 2em;
+		font-weight: 500;
+		text-align: center;
+		font-family: $server-header-font-pack;
+		padding: 0.2em;
+	}
+	h2 {
+		font-size: 1.8em;
+		font-weight: 400;
+		text-align: center;
+		font-family: $server-header-font-pack;
+		padding: 0.2em;
+	}
+	h3 {
+		font-size: 1.7em;
+		font-weight: 300;
+		text-align: center;
+		font-family: $server-header-font-pack;
+		padding: 0.2em;
+	}
+	h4 {
+		font-size: 1.4em;
+		font-weight: 200;
+		text-align: left;
+		font-family: $server-header-font-pack;
+		padding: 0.2em;
+		margin: 0.5em;
+	}
+	p {
+		font-family: $server-header-font-pack;
+		line-height: 1.2em;
+		margin: 1em;
+	}
 }
 
 .info-layout {

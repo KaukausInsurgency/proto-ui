@@ -1,0 +1,11 @@
+html {
+    color: #C7C8B8;
+    background-color: rgba(0,0,0,0.85);
+    font-family: 'Roboto',sans-serif;
+}
+
+.main {
+	overflow: hidden;		/* this makes the containers size expand to match the total size of all it's child elements */
+	margin-bottom: 30px;	/* this somehow prevents the bottom of the layout from going underneath the fixed footer ribbon */
+	height: 100%;
+}

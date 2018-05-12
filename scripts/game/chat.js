@@ -1,0 +1,46 @@
+$(function() {
+    $('.chat-layout').click(function()
+    {
+        var chat_window = $(this).children('.chat-window');
+        chat_window.css('display','block');
+        chat_window.addClass('js-clicked');
+        $('.chat-window').not(chat_window)
+            .css('display', 'none')
+            .removeClass('js-clicked');
+    });
+
+    $("body").click
+    (
+        function(e)
+        {
+            var chat_layout = $(e.target).closest(".chat-layout");
+            if(!chat_layout.length)
+            {
+                $(".chat-window").css('display','');
+            }
+        }
+    );
+
+    (function( $ ){
+        $.fn.ki = function() {
+          var obj = this;
+          return {
+              add: function(username, side, text)
+              {
+                  var chat_faction = "chat-neutral";
+                  if (side == 0)
+                    chat_faction = "chat-redfor";
+                  else if (side == 1)
+                    chat_faction = "chat-blufor";
+
+                obj.append("<div class='chat-message'><span class='chat-username " + 
+                    chat_faction + "'>" + username + "</span><span class='chat-body'> : " +
+                    text + "</span></div>");
+
+                obj.animate({ scrollTop: obj.prop("scrollHeight")}, 1000);
+              }
+          }
+        };
+      })( jQuery );
+
+});

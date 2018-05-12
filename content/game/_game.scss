@@ -1,0 +1,65 @@
+$header-height: 350px;
+$server-header-font-pack: 'Roboto',sans-serif;
+$main-columns-height: 500px;
+
+.server-description {
+	padding: 1em;
+	/* @include calc( width, 80%, '100% - #{$nav-width-collapsed}'); */	/* body needs to be shifted left of the vertical navbar */
+	height:$header-height;
+	overflow:hidden;
+	font-family: $server-header-font-pack;
+	margin: 2em 4em;
+
+	h1 {
+		font-size: 2em;
+		font-weight: 500;
+		text-align: center;
+		font-family: $server-header-font-pack;
+		padding: 0.2em;
+	}
+	h2 {
+		font-size: 1.8em;
+		font-weight: 400;
+		text-align: center;
+		font-family: $server-header-font-pack;
+		padding: 0.2em;
+	}
+	h3 {
+		font-size: 1.7em;
+		font-weight: 300;
+		text-align: center;
+		font-family: $server-header-font-pack;
+		padding: 0.2em;
+	}
+	h4 {
+		font-size: 1.4em;
+		font-weight: 200;
+		text-align: left;
+		font-family: $server-header-font-pack;
+		padding: 0.2em;
+		margin: 0.5em;
+	}
+	p {
+		font-family: $server-header-font-pack;
+		line-height: 1.2em;
+		margin: 1em;
+	}
+}
+
+.game-section {
+	display: flex; 
+	justify-content: center; 
+	flex-wrap: wrap; 
+	margin: 0 4em;
+}
+
+.info-layout {
+	@extend %block-float;
+	min-width:200px; 
+	flex: 1;
+	height:$main-columns-height;  
+	color:white; 
+	padding: 0.5em 0.5em;
+}
+
+

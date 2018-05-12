@@ -1,7 +1,7 @@
-$dash-large-font-size: 1.2em;
+$dash-large-font-size: 1.0em;
 $dash-small-font-size: 0.7em;
-$dash-large-font-color: #333333;
-$dash-small-font-color: #808080;
+$dash-large-font-color: #ffffff;
+$dash-small-font-color: #C7C8B8;
 
 /* Colors for the vertical lines that appear in the dashboard header */
 .dash-col-lblue:after {
@@ -49,7 +49,7 @@ $dash-small-font-color: #808080;
 }
 
 .dash-col-dark:after {
-    background: #262626;
+    background: #ffffff;
 }
 
 .dash-col-gray:after {
@@ -62,8 +62,11 @@ $dash-small-font-color: #808080;
     padding-bottom: 5px;
     box-sizing: border-box;
     border-radius: 5px;
-    border: 1px solid #d3d3d3;
-    background-color: #66a8fb;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    ///border: 1px solid #d3d3d3;
+    ///background-color: #66a8fb;
 
     overflow:hidden;
 

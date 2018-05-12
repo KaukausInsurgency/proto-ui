@@ -2,16 +2,20 @@
 <html lang="en">
 
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="content/reset.css">
 	<link rel="stylesheet" href="content/style.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
 	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="scripts/navigation.js"></script>
-	<script src="scripts/server-navigation.js"></script>
-	<script src="scripts/chat.js"></script>
-	<script src="scripts/dash.js"></script>
-	<script src="scripts/live-map.js"></script>
+	<script src="scripts/game/game-navigation.js"></script>
+	<script src="scripts/game/chat.js"></script>
+	<script src="scripts/game/live-map.js"></script>
+	<script src="scripts/mapbox/jquery.mapbox.js"></script>
+	<script src="scripts/mapbox/jquery.mousewheel.js"></script>
+	<!--<script src="scripts/dash.js"></script>-->
 </head>
 
 <body>
@@ -64,206 +68,272 @@
 			<span class="js-nav-text">DCS Post</span>
 		</a>
 	</div>
-	<section class="server-header">
-		<div class="server-header-image"></div>
-		<div class="server-header-color"></div>
-		<div class="server-header-info">
+	<section class="header">
+		<div class="header-image"></div>
+		<div class="header-color"></div>
+		<div class="header-info">
 			<h1>Kaukasus Insurgency</h1>
 		</div>
 	</section>
 	<!-- Page content -->
 	<div class="main">
-		<div class="header-layout">HEADER The standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-			sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-			ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-			mollit anim id est laborum." Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC "Sed ut perspiciatis
-			unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-			inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-			aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
-			quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
-			incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem
-			ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui
-			in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</div>
-
-		<div class="info-layout scrollable">
-			<h2 style="font-size: 3em; text-align: center;">Server</h2>
-			<div class="progress-bar">
-				<div style="font-size: 0.5em; text-align:center;">Time Remaining: 03:00:00</div>
-				<span style="width: 25%"></span>
-			</div>
-			<div class="dash-row">
-				<div class="dash-columns">
-					<div class="dash-header dash-large-font">Online</div>
-					<div class="dash-header dash-small-font">Status</div>
-				</div>
-			</div>
-			<div class="dash-row">
-				<div class="dash-columns">
-					<div class="dash-header dash-large-font">158.69.241.110</div>
-					<div class="dash-header dash-small-font">Address</div>
-				</div>
-			</div>
-			<div class="dash-row">
-				<div class="dash-columns">
-					<div class="dash-header dash-large-font">30</div>
-					<div class="dash-header dash-small-font">Online</div>
-				</div>
-				<div class="dash-columns">
-					<div class="dash-header dash-large-font">12</div>
-					<div class="dash-header dash-small-font">Red</div>
-				</div>
-				<div class="dash-columns">
-					<div class="dash-header dash-large-font">14</div>
-					<div class="dash-header dash-small-font">Blue</div>
-				</div>
-				<div class="dash-columns">
-					<div class="dash-header dash-large-font">4</div>
-					<div class="dash-header dash-small-font">Spectators</div>
-				</div>
-			</div>
+		<div class="server-description">
+			<h1>Mock Gamers DCS Virtual Wing</h1>
+			<h4>Description</h4>
+			<p>The standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+				eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+				laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+				dolore eu fugiat nulla pariatur.</p>
+			<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." Section
+				1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC "Sed ut perspiciatis unde omnis iste natus error
+				sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+				architecto beatae vitae dicta sunt explicabo.</p>
+			<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
+				ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+				velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim
+				ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+				Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui
+				dolorem eum fugiat quo voluptas nulla pariatur?</p>
 		</div>
-		<div class="live-map-layout">
-			<div class="live-map" style="width: 650px; height: 470px; background-color:black;">
-				LIVE MAP
+
+		<section class="game-section">
+			<div class="info-layout scrollable">
+				<h2 style="font-size: 3em; text-align: center;">Server</h2>
+				<div class="progress-bar-layout">
+					<div class="progress-bar-title">Time Remaining: 03:00:00</div>
+					<div class="progress-bar">
+						<span style="width: 25%"></span>
+					</div>
+				</div>
+
+				<div class="dash-row">
+					<div class="dash-columns dash-col-green">
+						<div class="dash-header dash-large-font">Online</div>
+						<div class="dash-header dash-small-font">Status</div>
+					</div>
+				</div>
+				<div class="dash-row">
+					<div class="dash-columns dash-col-tan">
+						<div class="dash-header dash-large-font">158.69.241.110</div>
+						<div class="dash-header dash-small-font">Address</div>
+					</div>
+					<div class="dash-columns dash-col-tan">
+						<div class="dash-header dash-large-font">158.69.241.110:5014</div>
+						<div class="dash-header dash-small-font">Simple Radio</div>
+					</div>
+				</div>
+				<div class="dash-row">
+					<div class="dash-columns dash-col-dark">
+						<div class="dash-header dash-large-font">30</div>
+						<div class="dash-header dash-small-font">Online</div>
+					</div>
+					<div class="dash-columns dash-col-lred">
+						<div class="dash-header dash-large-font">12</div>
+						<div class="dash-header dash-small-font">Red</div>
+					</div>
+					<div class="dash-columns dash-col-lblue">
+						<div class="dash-header dash-large-font">14</div>
+						<div class="dash-header dash-small-font">Blue</div>
+					</div>
+					<div class="dash-columns dash-col-gray">
+						<div class="dash-header dash-large-font">4</div>
+						<div class="dash-header dash-small-font">Spectators</div>
+					</div>
+				</div>
+				<div class="dash-row">
+					<div class="dash-columns dash-col-dark">
+						<div class="dash-header dash-large-font">5</div>
+						<div class="dash-header dash-small-font">Lives Configured</div>
+					</div>
+					<div class="dash-columns dash-col-lred">
+						<div class="dash-header dash-large-font">10</div>
+						<div class="dash-header dash-small-font">Depots</div>
+					</div>
+					<div class="dash-columns dash-col-lblue">
+						<div class="dash-header dash-large-font">18</div>
+						<div class="dash-header dash-small-font">Capture Points</div>
+					</div>
+					<div class="dash-columns dash-col-gray">
+						<div class="dash-header dash-large-font">4</div>
+						<div class="dash-header dash-small-font">Spectators</div>
+					</div>
+				</div>
 			</div>
-			<div class="footer">
-				<div class="chat-layout glass">
-					<i class="fas fa-address-book navicon live-map-footer-item"></i>
-					<span class="live-map-footer-item">Chat</span>
-					<div class="chat-window live-map-footer-content">
-						<div class="chat-title">In-Game Chat</div>
-						<div class="chat-message-body">
-							<div class="chat-message">
-								<span class="chat-username chat-redfor">Player 1</span>
-								<span class="chat-body"> : Some Sample Redfor test to be tested out on a screen</span>
+			<div class="live-map-layout">
+				<div class="live-map">
+					<div id="viewport">
+						<div style="height: 470px; width: 650px;" class='map-layer'>
+							<img src="../images/map/map-batumi-to-tblisi-1320x650.png" align="middle" alt="" />
+							<div class="mapcontent">
+								<!--map content goes here-->
 							</div>
-							<div class="chat-message">
-								<span class="chat-username chat-blufor">Player 2</span>
-								<span class="chat-body"> : Some Sample Blufor text</span>
+						</div>
+						<div style="height: 926px; width: 1880px;" class='map-layer'>
+							<img src="../images/map/map-batumi-to-tblisi-1880x926.png" alt="" />
+							<div class="mapcontent">
+								<!--map content goes here-->
 							</div>
-							<div class="chat-message">
-								<span class="chat-username chat-neutral">Player 3</span>
-								<span class="chat-body"> : Some Sample Neutral text</span>
+						</div>
+						<div style="height: 1320px; width: 2679px;" class='map-layer'>
+							<img src="../images/map/map-batumi-to-tblisi-2679x1320.png" alt="" />
+							<div class="mapcontent">
+								<!--map content goes here-->
 							</div>
-							<div class="chat-message">
-								<span class="chat-username chat-blufor">Player 4</span>
-								<span class="chat-body"> : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat eius totam, minus eaque quod vitae consectetur
-									sed cumque reprehenderit aliquid?</span>
+						</div>
+						<!--
+						<div class="map-layer map-nomap">
+							<div class="mapcontent">
+							</div>
+						</div>
+						-->
+					</div>
+					<div class="map-control">
+						<a href="#left" class="left">Left</a>
+						<a href="#right" class="right">Right</a>
+						<a href="#up" class="up">Up</a>
+						<a href="#down" class="down">Down</a>
+						<a href="#zoom" class="zoom">Zoom</a>
+						<a href="#zoom_out" class="back">Back</a>
+					</div>
+				</div>
+				<div class="footer">
+					<div id="ingame-chat" class="chat-layout glass">
+						<i class="fas fa-address-book navicon live-map-footer-item"></i>
+						<span class="live-map-footer-item">Chat</span>
+						<div class="chat-window live-map-footer-content">
+							<div class="chat-title">In-Game Chat</div>
+							<div class="chat-message-body">
+								<div class="chat-message">
+									<span class="chat-username chat-redfor">Player 1</span>
+									<span class="chat-body"> : Some Sample Redfor test to be tested out on a screen</span>
+								</div>
+								<div class="chat-message">
+									<span class="chat-username chat-blufor">Player 2</span>
+									<span class="chat-body"> : Some Sample Blufor text</span>
+								</div>
+								<div class="chat-message">
+									<span class="chat-username chat-neutral">Player 3</span>
+									<span class="chat-body"> : Some Sample Neutral text</span>
+								</div>
+								<div class="chat-message">
+									<span class="chat-username chat-blufor">Player 4</span>
+									<span class="chat-body"> : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat eius totam, minus eaque quod vitae consectetur
+										sed cumque reprehenderit aliquid?</span>
+								</div>
 							</div>
 						</div>
 					</div>
-
-				</div>
-				<div class="chat-layout glass">
-					<i class="fas fa-address-book navicon live-map-footer-item"></i>
-					<span class="live-map-footer-item">Notifications</span>
-					<div class="chat-window live-map-footer-content">
-						<div class="chat-title">Action Log</div>
-						<div class="chat-message-body">
-							<div class="chat-message">
-								<span class="chat-username chat-neutral">12:23 PM</span>
-								<span class="chat-body"> : Player 1 Hit Player 2 with AIM-104 AMMRAAM</span>
-							</div>
-							<div class="chat-message">
-								<span class="chat-username chat-neutral">12:24 PM</span>
-								<span class="chat-body"> : Player 2 Crashed</span>
-							</div>
-							<div class="chat-message">
-								<span class="chat-username chat-neutral">1:00 PM</span>
-								<span class="chat-body"> : Player 1 Landed at Sochi</span>
-							</div>
-							<div class="chat-message">
-								<span class="chat-username chat-neutral">2:34 PM</span>
-								<span class="chat-body"> : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat eius totam, minus eaque quod vitae consectetur
-									sed cumque reprehenderit aliquid?</span>
+					<div id="ingame-missions" class="chat-layout glass">
+						<i class="fas fa-address-book navicon live-map-footer-item"></i>
+						<span class="live-map-footer-item">Notifications</span>
+						<div class="chat-window live-map-footer-content">
+							<div class="chat-title">Action Log</div>
+							<div class="chat-message-body">
+								<div class="chat-message">
+									<span class="chat-username chat-neutral">12:23 PM</span>
+									<span class="chat-body"> : Player 1 Hit Player 2 with AIM-104 AMMRAAM</span>
+								</div>
+								<div class="chat-message">
+									<span class="chat-username chat-neutral">12:24 PM</span>
+									<span class="chat-body"> : Player 2 Crashed</span>
+								</div>
+								<div class="chat-message">
+									<span class="chat-username chat-neutral">1:00 PM</span>
+									<span class="chat-body"> : Player 1 Landed at Sochi</span>
+								</div>
+								<div class="chat-message">
+									<span class="chat-username chat-neutral">2:34 PM</span>
+									<span class="chat-body"> : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat eius totam, minus eaque quod vitae consectetur
+										sed cumque reprehenderit aliquid?</span>
+								</div>
 							</div>
 						</div>
 					</div>
+					<div class="missions-layout glass">
+						<i class="fas fa-address-book navicon live-map-footer-item"></i>
+						<span class="live-map-footer-item">Missions
+							<a class="notification">5</a>
+						</span>
+					</div>
 				</div>
-				<div class="missions-layout glass">
-					<i class="fas fa-address-book navicon live-map-footer-item"></i>
-					<span class="live-map-footer-item">Missions
-						<a class="notification">5</a>
-					</span>
+				<div>
+					<span class="prop-game-nav" />
+				</div>
+				<div class="game-nav">
+					<div class="game-dropdown">
+						<span class="glass">
+							<i class="fas fa-address-book navicon"></i>
+						</span>
+						<div class="game-dropdown-content">
+							<span class="glass">
+								<i class="fas fa-address-book navicon"></i>Discord
+							</span>
+						</div>
+						<div class="game-flyout-content">
+							<iframe src="https://discordapp.com/widget?id=410076123242954753&theme=dark" width="300" height="500" allowtransparency="true"
+							 frameborder="0"></iframe>
+						</div>
+					</div>
+					<div class="game-dropdown">
+						<span class="glass">
+							<i class="fas fa-address-book navicon"></i>
+						</span>
+						<div class="game-dropdown-content">
+							<span class="glass">
+								<i class="fas fa-address-book navicon"></i>Players
+							</span>
+						</div>
+						<div class="game-flyout-content">
+							<table id="players-table" class="table table-bordered" style="width: 60%;" align="center">
+								<caption style="text-align:center">
+									<b>Online Players</b>
+								</caption>
+								<thead>
+									<tr>
+										<th>
+											<a>Role</a>
+										</th>
+										<th>
+											<a>Player Name</a>
+										</th>
+										<th>
+											<a>Side</a>
+										</th>
+										<th>
+											<a>Lives</a>
+										</th>
+										<th>
+											<a>Ping</a>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+										<td>
+											<i class="fas fa-fighter-jet"></i>
+										</td>
+										<td>laggygamerz_server</td>
+										<td>Neutral</td>
+										<td>5</td>
+										<td>0</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="game-dropdown">
+						<span class="glass">
+							<i class="fas fa-address-book navicon"></i>
+						</span>
+						<div class="game-dropdown-content">
+							<span class="glass">
+								<i class="fas fa-address-book navicon"></i>Stats
+							</span>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div>
-				<span class="prop-server-nav" />
-			</div>
-			<div class="server-nav">
-				<div class="server-dropdown">
-					<span>
-						<i class="fas fa-address-book navicon"></i>
-					</span>
-					<div class="server-dropdown-content">
-
-						<span>
-							<i class="fas fa-address-book navicon"></i>Discord</span>
-					</div>
-					<div class="server-flyout-content">
-						<iframe src="https://discordapp.com/widget?id=410076123242954753&theme=dark" width="300" height="500" allowtransparency="true"
-						 frameborder="0"></iframe>
-					</div>
-				</div>
-				<div class="server-dropdown">
-					<span>
-						<i class="fas fa-address-book navicon"></i>
-					</span>
-					<div class="server-dropdown-content">
-						<span>
-							<i class="fas fa-address-book navicon"></i>Players</span>
-					</div>
-					<div class="server-flyout-content">
-						<table id="players-table" class="table table-bordered" style="width: 60%;" align="center">
-							<caption style="text-align:center">
-								<b>Online Players</b>
-							</caption>
-							<thead>
-								<tr>
-									<th>
-										<a>Role</a>
-									</th>
-									<th>
-										<a>Player Name</a>
-									</th>
-									<th>
-										<a>Side</a>
-									</th>
-									<th>
-										<a>Lives</a>
-									</th>
-									<th>
-										<a>Ping</a>
-									</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
-									<td>
-										<i class="fas fa-fighter-jet"></i>
-									</td>
-									<td>laggygamerz_server</td>
-									<td>Neutral</td>
-									<td>5</td>
-									<td>0</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-				<div class="server-dropdown">
-					<span>
-						<i class="fas fa-address-book navicon"></i>
-					</span>
-					<div class="server-dropdown-content">
-						<span>
-							<i class="fas fa-address-book navicon"></i>Stats</span>
-					</div>
-				</div>
-			</div>
-		</div>
-
+		</section>
 
 	</div>
 	<div id="footer">FOOTER

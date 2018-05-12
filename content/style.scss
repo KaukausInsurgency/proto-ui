@@ -1,12 +1,17 @@
 @import 'properties';
 @import 'extends';
 @import 'effects';
+@import 'global';
+
 @import 'navigation';
 @import 'header';
 @import 'footer';
-@import 'server';
-@import 'live-map';
-@import 'chat';
+
 @import 'dash';
 @import 'progressbar';
-@import 'server-navigation'
+
+@import 'game/game';
+@import 'game/live-map';
+@import 'game/chat';
+@import 'game/game-navigation';
+

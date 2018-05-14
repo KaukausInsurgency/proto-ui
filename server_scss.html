@@ -348,7 +348,72 @@
 	</div>
 
 	<script>
+
 		function myMap() {
+			function CustomMarker(latlng, map, args) {
+				this.latlng = latlng;
+				this.args = args;
+				this.setMap(map);
+			}
+
+			CustomMarker.prototype = new google.maps.OverlayView();
+
+			CustomMarker.prototype.draw = function () {
+
+				var self = this;
+
+				var div = this.div;
+
+				if (!div) {
+
+					div = this.div = document.createElement('div');
+
+					div.className = 'marker';
+
+					div.style.position = 'absolute';
+
+					//set the values passed in from the creation of the custom marker
+					div.innerHTML = this.args.htmlContent;
+					div.style.color = this.args.color;
+
+					if (typeof (self.args.marker_id) !== 'undefined') {
+						div.dataset.marker_id = self.args.marker_id;
+					}
+
+					//add events to the marker
+
+					google.maps.event.addDomListener(div, "mouseover", function (e) {
+						//do something on mouseover, maybe show some tooltip text
+					})
+
+					google.maps.event.addDomListener(div, "mouseout", function (e) {
+						//do something on mosueout, hide the tooltip text
+					})
+
+
+					var panes = this.getPanes();
+					panes.overlayImage.appendChild(div);
+				}
+
+				var point = this.getProjection().fromLatLngToDivPixel(this.latlng);
+
+				//position the custom marker on the map
+				if (point) {
+					div.style.left = (point.x) + 'px';
+					div.style.top = (point.y) + 'px';
+				}
+			};
+
+			CustomMarker.prototype.remove = function () {
+				if (this.div) {
+					this.div.parentNode.removeChild(this.div);
+					this.div = null;
+				}
+			};
+
+			CustomMarker.prototype.getPosition = function () {
+				return this.latlng;
+			};
 			var mapProp = {
 				zoom: 6.5,
 				center: { lat: 42.332864120611, lng: 41.875537702983 },
@@ -550,11 +615,26 @@
 				]
 			};
 			var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+			overlay = new CustomMarker(
+				new google.maps.LatLng(43.582658,39.763357 ),
+				map,
+				{
+					marker_id: '123',
+					htmlContent: '<div style="border-radius: 25px"><i class="far fa-flag fa-3x"></i></div>',
+					color: '#DF1E1E',
+					tooltip: 'marker tooltp'
+				}
+			);
+			var marker = new google.maps.Marker({
+				position: { lat: 43.782658, lng: 39.763357 },
+				map: map,
+				title: "Sochi Airfield"
+			});
 		}
 	</script>
 
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYmQlCOtX05GriYZDAfgnTUL5mY4kjyYQ&callback=myMap"></script>
 
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYmQlCOtX05GriYZDAfgnTUL5mY4kjyYQ&callback=myMap"></script>
 </body>
 
 </html>

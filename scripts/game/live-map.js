@@ -1,3 +1,36 @@
+livemap = (function () {
+    var self = this;
+    var icon_span = $('<span class="fa-stack fa-lg"></span>');
+    var icon_border = $('<i class="fa fa-circle fa-stack-2x"></i>');
+    var icon_capture_point = $('<i class="far fa-flag fa-stack-1x icon-color"></i>');
+
+    function set_side_class(side) { // this function not available outside your module
+        if (side === 0)
+            return 'redfor-bg-icon';
+        else if (side === 1)
+            return 'blufor-bg-icon';
+        else
+            return 'neutral-bg-icon';
+    }
+
+    return {
+        create_capture_point: function (side) {
+            var icon_clone = icon_span.clone();
+            var icon_border_clone = icon_border.clone();
+            icon_border_clone.addClass(set_side_class(side));
+            icon_clone.append(icon_border_clone);
+            icon_clone.append(icon_capture_point);
+            
+            return icon_clone.prop('outerHTML');
+        },
+        b_func: function () {
+            alert(my_var); // this function can also access my_var
+        }
+    };
+
+})();
+
+
 $(function () {
     (function ($) {
         $.fn.notif = function () {

@@ -1,10 +1,13 @@
-livemap = (function () {
+iconBuilder = (function () {
     var self = this;
-    var icon_span = $('<span class="fa-stack fa-lg"></span>');
-    var icon_border = $('<i class="fa fa-circle fa-stack-2x"></i>');
-    var icon_capture_point = $('<i class="far fa-flag fa-stack-1x icon-color"></i>');
+    var iconSpan = $('<span class="fa-stack fa-lg"></span>');
+    var iconBorder = $('<i class="fa fa-circle fa-stack-2x"></i>');
+    var iconCapturePoint = $('<i class="far fa-flag fa-stack-1x icon-color"></i>');
+    var iconDepot = $('<i class="fas fa-warehouse fa-stack-1x icon-color"></i>');
+    var iconAirport = $('<i class="fas fa-plane fa-rotate-45 fa-stack-1x icon-color"></i>')
+    var iconFARP = $('<i class="fas fa-hospital-symbol fa-stack-1x icon-color"></i>')
 
-    function set_side_class(side) { // this function not available outside your module
+    function setSideClass(side) { // this function not available outside your module
         if (side === 0)
             return 'redfor-bg-icon';
         else if (side === 1)
@@ -13,18 +16,49 @@ livemap = (function () {
             return 'neutral-bg-icon';
     }
 
+    function createIconBase(side) {
+        var iconClone = iconSpan.clone();
+        var iconBorderClone = iconBorder.clone();
+        iconBorderClone.addClass(setSideClass(side));
+        iconClone.append(iconBorderClone);
+        return iconClone;
+    }
+
+    function create(side, type) {
+        var icon = createIconBase(side);
+        switch (String(type)) {
+            case "AIRPORT":
+                icon.append(iconAirport);   
+            break;
+            case "DEPOT":
+                icon.append(iconDepot);  
+            break;
+            case "CAPTUREPOINT":
+                icon.append(iconCapturePoint);   
+            break;
+            case "FARP":
+                icon.append(iconFARP);  
+            break;
+            default:
+
+            break;
+        }
+
+        return icon.prop('outerHTML');
+    }
+
     return {
-        create_capture_point: function (side) {
-            var icon_clone = icon_span.clone();
-            var icon_border_clone = icon_border.clone();
-            icon_border_clone.addClass(set_side_class(side));
-            icon_clone.append(icon_border_clone);
-            icon_clone.append(icon_capture_point);
-            
-            return icon_clone.prop('outerHTML');
+        capturePoint: function (side) { 
+            return create(side, "CAPTUREPOINT");
         },
-        b_func: function () {
-            alert(my_var); // this function can also access my_var
+        depot: function(side) {
+            return create(side, "DEPOT");
+        },
+        airport: function(side) {
+            return create(side, "AIRPORT");
+        },
+        farp: function(side) {
+            return create(side, "FARP");
         }
     };
 

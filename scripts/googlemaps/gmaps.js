@@ -1,24 +1,20 @@
-function myMap() {
-	function CustomMarker(latlng, map, args) {
+function initGoogleMap() {
+	function customMarker(latlng, map, args) {
 		this.latlng = latlng;
 		this.args = args;
 		this.setMap(map);
 	}
 
-	CustomMarker.prototype = new google.maps.OverlayView();
+	customMarker.prototype = new google.maps.OverlayView();
 
-	CustomMarker.prototype.draw = function () {
-
+	customMarker.prototype.draw = function () {
 		var self = this;
-
 		var div = this.div;
 
 		if (!div) {
 
 			div = this.div = document.createElement('div');
-
 			div.className = 'marker';
-
 			div.style.position = 'absolute';
 
 			//set the values passed in from the creation of the custom marker
@@ -39,7 +35,6 @@ function myMap() {
 				//do something on mosueout, hide the tooltip text
 			})
 
-
 			var panes = this.getPanes();
 			panes.overlayImage.appendChild(div);
 		}
@@ -53,14 +48,14 @@ function myMap() {
 		}
 	};
 
-	CustomMarker.prototype.remove = function () {
+	customMarker.prototype.remove = function () {
 		if (this.div) {
 			this.div.parentNode.removeChild(this.div);
 			this.div = null;
 		}
 	};
 
-	CustomMarker.prototype.getPosition = function () {
+	customMarker.prototype.getPosition = function () {
 		return this.latlng;
 	};
 	var mapProp = {
@@ -263,25 +258,50 @@ function myMap() {
 			}
 		]
 	};
+	
 	map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-	overlay = new CustomMarker(
+	
+	overlay = new customMarker(
 		new google.maps.LatLng(43.582658,39.763357 ),
 		map,
 		{
-			marker_id: '123',
-			htmlContent: livemap.create_capture_point(),
+			marker_id: '1',
+			htmlContent: iconBuilder.airport(2),
 			tooltip: 'marker tooltp'
 		}
 	);
-	// overlay.args.marker_id;
 
-	overlay2 = new CustomMarker(
+	overlay2 = new customMarker(
 		new google.maps.LatLng(43.782658,39.763357 ),
 		map,
 		{
-			marker_id: '124',
-			htmlContent: livemap.create_capture_point(1),
+			marker_id: '2',
+			htmlContent: iconBuilder.capturePoint(1),
 			tooltip: 'marker tooltp'
 		}
 	);
+
+	overlay3 = new customMarker(
+		new google.maps.LatLng(43.712098,39.744357 ),
+		map,
+		{
+			marker_id: '3',
+			htmlContent: iconBuilder.farp(1),
+			tooltip: 'marker tooltp'
+		}
+	);
+
+	overlay4 = new customMarker(
+		new google.maps.LatLng(43.822798,39.724397 ),
+		map,
+		{
+			marker_id: '4',
+			htmlContent: iconBuilder.depot(0),
+			tooltip: 'marker tooltp'
+		}
+	);
+
+	// overlay.args.marker_id;
+
+	
 }

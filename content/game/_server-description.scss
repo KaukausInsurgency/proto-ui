@@ -1,5 +1,6 @@
 $server-description-font-pack: 'Roboto',sans-serif;
 $server-description-height: 350px;
+
 .server-description {
 	padding: 1em;
 	/* @include calc( width, 80%, '100% - #{$nav-width-collapsed}'); */	/* body needs to be shifted left of the vertical navbar */

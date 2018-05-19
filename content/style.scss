@@ -1,17 +1,14 @@
-@import 'fontawesome';
+@import 'shared/fontawesome';
+@import 'shared/variables';
+@import 'shared/extends';
+@import 'shared/effects';
+@import 'shared/global';
+@import 'shared/navigation';
+@import 'shared/footer';
 
-@import 'variables';
-
-@import 'extends';
-@import 'effects';
-@import 'global';
-
-@import 'navigation';
-@import 'header';
-@import 'footer';
-
-@import 'dash';
-@import 'progressbar';
+@import 'shared/dash';
+@import 'game/progressbar';
+@import 'game/header';
 
 @import 'game/game';
 @import 'game/live-map';

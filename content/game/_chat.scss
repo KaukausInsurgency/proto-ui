@@ -8,10 +8,10 @@ $chat-text-color: #ebebeb;
 $chat-title-text-color: #ebebeb;
 $chat-title-background-color: rgb(73, 73, 73);
 
-$font-pack: Raleway,sans-serif;
+$chat-font-pack: Raleway,sans-serif;
 
 .chat-window {
-    font-family: $font-pack;
+    font-family: $chat-font-pack;
     width: 30vw;
     height: 25vh;
     padding: 0 0.1em 0.4em 0.1em;

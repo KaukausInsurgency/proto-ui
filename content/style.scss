@@ -3,13 +3,14 @@
 @import 'shared/extends';
 @import 'shared/effects';
 @import 'shared/global';
+@import 'shared/dash';
 @import 'shared/navigation';
 @import 'shared/footer';
 
-@import 'shared/dash';
-@import 'game/progressbar';
-@import 'game/header';
 
+@import 'game/progressbar';
+@import 'game/server-description';
+@import 'game/header';
 @import 'game/game';
 @import 'game/live-map';
 @import 'game/chat';

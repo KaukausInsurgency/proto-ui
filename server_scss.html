@@ -13,6 +13,7 @@
 	<script src="scripts/game/game-navigation.js"></script>
 	<script src="scripts/game/chat.js"></script>
 	<script src="scripts/game/live-map.js"></script>
+	<script src="scripts/game/iconBuilder.js"></script>
 	<script src="scripts/mapbox/jquery.mapbox.js"></script>
 	<script src="scripts/mapbox/jquery.mousewheel.js"></script>
 	<!--<script src="scripts/dash.js"></script>-->
@@ -222,7 +223,7 @@
 							</div>
 						</div>
 					</div>
-					<div id="ingame-missions" class="chat-layout glass">
+					<div id="ingame-notifications" class="chat-layout glass">
 						<i class="fas fa-address-book navicon live-map-footer-item"></i>
 						<span class="live-map-footer-item">Notifications</span>
 						<div class="chat-window live-map-footer-content">
@@ -351,6 +352,13 @@
 
 
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYmQlCOtX05GriYZDAfgnTUL5mY4kjyYQ&callback=initGoogleMap"></script>
+	<script type="text/javascript">
+		var n = $('#ingame-notifications').kiChat();
+		var c = $('#ingame-chat').kiChat();
+
+		c.add('Jojo', 0, 'Some scripted text');
+		n.add('4:33 PM', 2, 'Scripted mission notification');
+	</script>
 </body>
 
 </html>

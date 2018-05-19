@@ -1,46 +1,68 @@
-$(function() {
-    $('.chat-layout').click(function()
-    {
-        var chat_window = $(this).children('.chat-window');
-        chat_window.css('display','block');
-        chat_window.addClass('js-clicked');
-        $('.chat-window').not(chat_window)
-            .css('display', 'none')
-            .removeClass('js-clicked');
-    });
+(function ($) {
+    $.fn.kiChat = function () {
+        var obj = this;
+        
+        var $chatMessageBody= obj.find('.chat-message-body');
+        var $chatMessage = $('<div class="chat-message"></div>');
+        var $chatUsername = $('<span class="chat-username"></span>');
+        var $chatBody = $('<span class="chat-body"></span>');
 
-    $("body").click
-    (
-        function(e)
-        {
-            var chat_layout = $(e.target).closest(".chat-layout");
-            if(!chat_layout.length)
-            {
-                $(".chat-window").css('display','');
+        // bind events
+        obj.on('click', showWindow);
+        $('body').on('click', hideWindow);
+
+        function showWindow(event) {
+            var $chatWindow = $(event.target).children('.chat-window');
+            if ($chatWindow.length) {
+                $chatWindow.css('display', 'block');
+                $('.chat-window').not($chatWindow).css('display', 'none');
+            }
+            
+        }
+
+        function hideWindow(event) {
+            var $chatLayout = $(event.target).closest('.chat-layout');
+            if (!$chatLayout.length) {
+                $('.chat-window').css('display', '');
             }
         }
-    );
 
-    (function( $ ){
-        $.fn.ki = function() {
-          var obj = this;
-          return {
-              add: function(username, side, text)
-              {
-                  var chat_faction = "chat-neutral";
-                  if (side == 0)
-                    chat_faction = "chat-redfor";
-                  else if (side == 1)
-                    chat_faction = "chat-blufor";
+        function getSideClass(side) {
+            switch (side) {
+                case 0:
+                    return 'chat-redfor';
+                    break;
+                case 1:
+                    return 'chat-blufor';
+                    break;
+                default:
+                    return 'chat-neutral';
+                    break;
+            }
+        }
 
-                obj.append("<div class='chat-message'><span class='chat-username " + 
-                    chat_faction + "'>" + username + "</span><span class='chat-body'> : " +
-                    text + "</span></div>");
+        function create(username, side, body) {
 
-                obj.animate({ scrollTop: obj.prop("scrollHeight")}, 1000);
-              }
-          }
-        };
-      })( jQuery );
+            var $chatUsernameClone = $chatUsername.clone();
+            $chatUsernameClone.addClass(getSideClass(side));
+            $chatUsernameClone.html(username);
 
-});
+            var $chatBodyClone = $chatBody.clone();
+            $chatBodyClone.html(' : ' + body);
+
+            var $chatMessageClone = $chatMessage.clone();
+            $chatMessageClone.append($chatUsernameClone);
+            $chatMessageClone.append($chatBodyClone);
+
+            return $chatMessageClone;
+        }
+
+        return {
+            add: function (username, side, text) {
+                var $newChatMessage = create(username, side, text);
+                $chatMessageBody.append($newChatMessage);
+                $chatMessageBody.animate({ scrollTop: obj.prop('scrollHeight') }, 1000);
+            }
+        }
+    };
+})(jQuery);

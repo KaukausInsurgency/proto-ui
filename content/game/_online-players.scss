@@ -1,0 +1,90 @@
+$table-neutral-color: #9b9b9b;
+$table-redfor-color: #e85a5a;
+$table-blufor-color: #5a8be8;
+$table-font-color: #dadada;
+$table-background-color: #111;
+$table-header-column-color: #d8d8d8;
+$table-data-row-color-odd: #272727;
+$table-data-row-color-even: #474747;
+
+.online-players-redfor {
+    color: $chat-redfor-color;
+}
+
+.online-players-blufor {
+    color: $chat-blufor-color;
+}
+
+.online-players-neutral {
+    color: $chat-neutral-color;
+}
+
+.online-players-layout {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: block;
+    width:600px;
+    height:300px;
+    padding: 0.5em;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: #cdcdcd;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 5px;
+    }
+}
+
+.online-players {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:$table-font-color;
+    background-color: $table-background-color;
+    opacity: 0.85;
+    line-height: 1em;
+    width: 100%;
+    height: 100%; 
+}
+
+table.online-players>caption {
+    text-align:center; 
+    font-weight:900;
+}
+
+// table header row
+table.online-players>thead>tr {
+    display: table-row;
+    vertical-align: inherit;
+}
+
+// table header columns
+table.online-players>thead>tr>th {
+    color: $table-header-column-color;
+    border-collapse: collapse;
+    vertical-align: bottom;
+    text-align: left;
+    padding: 8px;
+    box-sizing: border-box;
+    display: table-cell;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+// table data columns
+table.online-players>tbody>tr>td {
+    font-weight: 500;
+    font-size: 0.85em;
+    padding: 2px 5px;
+}
+
+table.online-players>tbody>tr:nth-child(odd) td{
+    background-color:$table-data-row-color-odd;
+}
+table.online-players>tbody>tr:nth-child(even) td{
+    background-color:$table-data-row-color-even;
+}

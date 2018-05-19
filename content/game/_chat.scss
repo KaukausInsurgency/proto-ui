@@ -21,6 +21,13 @@ $font-pack: Raleway,sans-serif;
     border: 10px solid transparent;    
     border-top-left-radius: 0.25em;
     border-top-right-radius: 0.25em;
+}
+
+.chat-message-body {
+    font-size: .8em;
+    line-height: 1.5;
+    overflow-y: scroll;
+    height: 100%;
 
     &::-webkit-scrollbar {
         width: 10px;
@@ -34,13 +41,6 @@ $font-pack: Raleway,sans-serif;
     &::-webkit-scrollbar-track {
         border-radius: 5px;
     }
-}
-
-.chat-message-body {
-    font-size: .8em;
-    line-height: 1.5;
-    overflow-y: scroll;
-    height: 100%;
 }
 
 .chat-layout:hover .chat-window {

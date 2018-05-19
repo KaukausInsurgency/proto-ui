@@ -4,7 +4,7 @@ $(function() {
 	$('.vnav-btn-expander').children('i').addClass($('.prop-vnav').css('--font-arrow-expand').trim());
 	$('.vnav-btn-expander').click(function()
 	{
-		var expander_icon = $('.vnav-btn-expander').children('i');
+		var expander_icon = $(this).children('i');
 		var expand_class = $('.prop-vnav').css('--font-arrow-expand').trim();
 		var collapse_class = $('.prop-vnav').css('--font-arrow-collapse').trim();
 		var fnc_animate = function(width, animComplete)

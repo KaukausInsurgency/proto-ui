@@ -9,21 +9,14 @@
 	 crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="scripts/navigation.js"></script>
-	<script src="scripts/game/game-navigation.js"></script>
-	<script src="scripts/game/chat.js"></script>
-	<script src="scripts/game/notification.js"></script>
-	<script src="scripts/game/live-map.js"></script>
-	<script src="scripts/game/iconBuilder.js"></script>
-	<script src="scripts/mapbox/jquery.mapbox.js"></script>
-	<script src="scripts/mapbox/jquery.mousewheel.js"></script>
+
 	<!--<script src="scripts/dash.js"></script>-->
 </head>
 
 <body>
 	<!-- Side navigation -->
 	<div>
-		<span class="prop-vnav" />
+		<span class="prop-vnav prop-icons" />
 	</div>
 	<div class="vnav">
 		<div class="vnav-btn-expander glass">
@@ -163,39 +156,7 @@
 			</div>
 			<div class="live-map-layout">
 				<div class="live-map">
-					<!--
-					<div id="viewport">
-						<div style="height: 470px; width: 650px;" class='map-layer'>
-							<img src="../images/map/map-batumi-to-tblisi-1320x650.png" align="middle" alt="" />
-							<div class="mapcontent">
-							</div>
-						</div>
-						<div style="height: 926px; width: 1880px;" class='map-layer'>
-							<img src="../images/map/map-batumi-to-tblisi-1880x926.png" alt="" />
-							<div class="mapcontent">
-							</div>
-						</div>
-						<div style="height: 1320px; width: 2679px;" class='map-layer'>
-							<img src="../images/map/map-batumi-to-tblisi-2679x1320.png" alt="" />
-							<div class="mapcontent">
-							</div>
-						</div>
-						<div class="map-layer map-nomap">
-							<div class="mapcontent">
-							</div>
-						</div>
-						
-					</div>
-					-->
-					<div id="googleMap" style="width:650px;height:470px;"></div>
-					<div class="map-control">
-						<a href="#left" class="left">Left</a>
-						<a href="#right" class="right">Right</a>
-						<a href="#up" class="up">Up</a>
-						<a href="#down" class="down">Down</a>
-						<a href="#zoom" class="zoom">Zoom</a>
-						<a href="#zoom_out" class="back">Back</a>
-					</div>
+					<div id="googleMap"></div>
 				</div>
 				<div class="footer">
 					<div id="ingame-chat" class="chat-layout glass">
@@ -285,41 +246,291 @@
 							</span>
 						</div>
 						<div class="game-flyout-content">
-							<table id="players-table" class="table table-bordered" style="width: 60%;" align="center">
-								<caption style="text-align:center">
-									<b>Online Players</b>
-								</caption>
-								<thead>
-									<tr>
-										<th>
-											<a>Role</a>
-										</th>
-										<th>
-											<a>Player Name</a>
-										</th>
-										<th>
-											<a>Side</a>
-										</th>
-										<th>
-											<a>Lives</a>
-										</th>
-										<th>
-											<a>Ping</a>
-										</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
-										<td>
-											<i class="fas fa-fighter-jet"></i>
-										</td>
-										<td>laggygamerz_server</td>
-										<td>Neutral</td>
-										<td>5</td>
-										<td>0</td>
-									</tr>
-								</tbody>
-							</table>
+							<div class="online-players-layout">
+								<table id="players-table" class="online-players" align="center">
+									<caption>Online Players</caption>
+									<thead>
+										<tr>
+											<th>
+												<a>Role</a>
+											</th>
+											<th>
+												<a>Player Name</a>
+											</th>
+											<th>
+												<a>Side</a>
+											</th>
+											<th>
+												<a>Lives</a>
+											</th>
+											<th>
+												<a>Ping</a>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td></td>
+											<td class="online-players-neutral">laggygamerz_server</td>
+											<td class="online-players-neutral">Neutral</td>
+											<td>5</td>
+											<td>0</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>Ka-50
+											</td>
+											<td class="online-players-redfor">Areallylongusernamefordisplaytesting</td>
+											<td class="online-players-redfor">Red</td>
+											<td>4</td>
+											<td>30 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>F-16S
+											</td>
+											<td class="online-players-blufor">jojo</td>
+											<td class="online-players-blufor">Blue</td>
+											<td>2</td>
+											<td>130 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>Mig-29S
+											</td>
+											<td class="online-players-redfor">Somestrongguy</td>
+											<td class="online-players-redfor">Red</td>
+											<td>5</td>
+											<td>220 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>SA-342LM
+											</td>
+											<td class="online-players-blufor">Goose Striker</td>
+											<td class="online-players-blufor">Blue</td>
+											<td>1</td>
+											<td>76 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>Ka-50
+											</td>
+											<td class="online-players-redfor">Areallylongusernamefordisplaytesting</td>
+											<td class="online-players-redfor">Red</td>
+											<td>4</td>
+											<td>30 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>F-16S
+											</td>
+											<td class="online-players-blufor">jojo</td>
+											<td class="online-players-blufor">Blue</td>
+											<td>2</td>
+											<td>130 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>Mig-29S
+											</td>
+											<td class="online-players-redfor">Somestrongguy</td>
+											<td class="online-players-redfor">Red</td>
+											<td>5</td>
+											<td>220 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>SA-342LM
+											</td>
+											<td class="online-players-blufor">Goose Striker</td>
+											<td class="online-players-blufor">Blue</td>
+											<td>1</td>
+											<td>76 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>Ka-50
+											</td>
+											<td class="online-players-redfor">Areallylongusernamefordisplaytesting</td>
+											<td class="online-players-redfor">Red</td>
+											<td>4</td>
+											<td>30 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>F-16S
+											</td>
+											<td class="online-players-blufor">jojo</td>
+											<td class="online-players-blufor">Blue</td>
+											<td>2</td>
+											<td>130 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>Mig-29S
+											</td>
+											<td class="online-players-redfor">Somestrongguy</td>
+											<td class="online-players-redfor">Red</td>
+											<td>5</td>
+											<td>220 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>SA-342LM
+											</td>
+											<td class="online-players-blufor">Goose Striker</td>
+											<td class="online-players-blufor">Blue</td>
+											<td>1</td>
+											<td>76 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>Ka-50
+											</td>
+											<td class="online-players-redfor">Areallylongusernamefordisplaytesting</td>
+											<td class="online-players-redfor">Red</td>
+											<td>4</td>
+											<td>30 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>F-16S
+											</td>
+											<td class="online-players-blufor">jojo</td>
+											<td class="online-players-blufor">Blue</td>
+											<td>2</td>
+											<td>130 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>Mig-29S
+											</td>
+											<td class="online-players-redfor">Somestrongguy</td>
+											<td class="online-players-redfor">Red</td>
+											<td>5</td>
+											<td>220 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>SA-342LM
+											</td>
+											<td class="online-players-blufor">Goose Striker</td>
+											<td class="online-players-blufor">Blue</td>
+											<td>1</td>
+											<td>76 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>Ka-50
+											</td>
+											<td class="online-players-redfor">Areallylongusernamefordisplaytesting</td>
+											<td class="online-players-redfor">Red</td>
+											<td>4</td>
+											<td>30 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>F-16S
+											</td>
+											<td class="online-players-blufor">jojo</td>
+											<td class="online-players-blufor">Blue</td>
+											<td>2</td>
+											<td>130 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>Mig-29S
+											</td>
+											<td class="online-players-redfor">Somestrongguy</td>
+											<td class="online-players-redfor">Red</td>
+											<td>5</td>
+											<td>220 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>SA-342LM
+											</td>
+											<td class="online-players-blufor">Goose Striker</td>
+											<td class="online-players-blufor">Blue</td>
+											<td>1</td>
+											<td>76 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>Ka-50
+											</td>
+											<td class="online-players-redfor">Areallylongusernamefordisplaytesting</td>
+											<td class="online-players-redfor">Red</td>
+											<td>4</td>
+											<td>30 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>F-16S
+											</td>
+											<td class="online-players-blufor">jojo</td>
+											<td class="online-players-blufor">Blue</td>
+											<td>2</td>
+											<td>130 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>Mig-29S
+											</td>
+											<td class="online-players-redfor">Somestrongguy</td>
+											<td class="online-players-redfor">Red</td>
+											<td>5</td>
+											<td>220 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>SA-342LM
+											</td>
+											<td class="online-players-blufor">Goose Striker</td>
+											<td class="online-players-blufor">Blue</td>
+											<td>1</td>
+											<td>76 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>Ka-50
+											</td>
+											<td class="online-players-redfor">Areallylongusernamefordisplaytesting</td>
+											<td class="online-players-redfor">Red</td>
+											<td>4</td>
+											<td>30 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>F-16S
+											</td>
+											<td class="online-players-blufor">jojo</td>
+											<td class="online-players-blufor">Blue</td>
+											<td>2</td>
+											<td>130 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>Mig-29S
+											</td>
+											<td class="online-players-redfor">Somestrongguy</td>
+											<td class="online-players-redfor">Red</td>
+											<td>5</td>
+											<td>220 ms</td>
+										</tr>
+										<tr class="clickable-row" playerucid="16eda78e326ca64818a1114c205657de">
+											<td>
+												<i class="fas fa-fighter-jet"></i>SA-342LM
+											</td>
+											<td class="online-players-blufor">Goose Striker</td>
+											<td class="online-players-blufor">Blue</td>
+											<td>1</td>
+											<td>76 ms</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 					<div class="game-dropdown">
@@ -349,6 +560,14 @@
 		</div>
 	</div>
 
+	<script src="scripts/navigation.js"></script>
+	<script src="scripts/game/game-navigation.js"></script>
+	<script src="scripts/game/chat.js"></script>
+	<script src="scripts/game/notification.js"></script>
+	<script src="scripts/game/live-map.js"></script>
+	<script src="scripts/game/iconBuilder.js"></script>
+	<script src="scripts/mapbox/jquery.mapbox.js"></script>
+	<script src="scripts/mapbox/jquery.mousewheel.js"></script>
 	<script src="scripts/googlemaps/gmaps.js"></script>
 
 

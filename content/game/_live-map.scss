@@ -10,7 +10,7 @@ $live-map-width: 650px;
 $live-map-height: 470px;
 
 %live-map-footer-layout {
-    width:33%; 
+    width: 33%; 
 	height: 100%; 
 	position:relative;
     text-align:center;
@@ -19,14 +19,22 @@ $live-map-height: 470px;
 .live-map-layout {
 	@extend %block-float;
 	background-color:red; 
-	width: $live-map-layout-width; 	/* reserve 650 px for the map, 50px for the vertical nav bar */
+	max-width: $live-map-layout-width;
+	width: 100%;
 	height: $live-map-layout-height; 
 	color:white; 
 	position:relative;
 }
 
+#googleMap {
+	width:100%;
+	height:100%;
+}
+
 .live-map {
-	width: $live-map-width; 
+	min-width:300px; 
+	max-width: $live-map-width;
+	flex: 1;
 	height: $live-map-height; 
 	background-color: $footer-background-color;
 }
@@ -77,82 +85,3 @@ $live-map-height: 470px;
 
 
 
-
-#viewport {
-	width: $live-map-width;
-	height: $live-map-height;
-	text-align:center;
-	cursor: move;
-	overflow: hidden;
-	border: 5px solid black;
-}
-
-.map-control {
-	position: absolute;
-	top: 50px;
-	right: 80px;
-	background: url("../images/map-control.png") no-repeat;
-	height: 63px;
-	width: 100px;
-}
-
-.map-control a {
-	height: 18px;
-	width: 18px;
-	display: block;
-	text-indent: -999em;
-	position: absolute;
-	outline: none;
-}
-
-.map-control a:hover {
-	background: #535353;
-	opacity: .4;
-	filter: alpha(opacity=40);
-}
-
-.map-control a.left {
-	left: 39px;
-	top: 22px;
-}
-
-.map-control a.right {
-	left: 79px;
-	top: 22px;
-}
-
-.map-control a.up {
-	left: 59px;
-	top: 2px;
-}
-
-.map-control a.down {
-	left: 59px;
-	top: 42px;
-}
-
-.map-control a.zoom {
-	left: 2px;
-	top: 8px;
-	height: 21px;
-	width: 21px;
-}
-
-.map-control a.back {
-	left: 2px;
-	top: 31px;
-	height: 21px;
-	width: 21px;
-}
-
-.map-layer > img {
-	opacity: .6;
-    background: linear-gradient(to left, #303030 80%, #222222);
-}
-
-
-.map-nomap {
-	background: url('../images/map/map-none-800x450.jpg') no-repeat center center; 
-	width: $live-map-width; 
-	height: $live-map-height;
-}

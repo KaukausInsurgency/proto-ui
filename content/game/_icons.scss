@@ -13,3 +13,14 @@
 .icon-color {
     color: white;
 }
+
+/* hidden properties used in javascript */
+.prop-icons {
+    #{--icon-span}:fa-stack fa-lg;
+    #{--icon-border}:fa fa-circle fa-stack-2x;
+    #{--icon-capture-point}:far fa-flag fa-stack-1x icon-color;
+    #{--icon-depot}:fas fa-warehouse fa-stack-1x icon-color;
+    #{--icon-airport}:fas fa-plane fa-rotate-45 fa-stack-1x icon-color;
+    #{--icon-farp}:fas fa-hospital-symbol fa-stack-1x icon-color;
+	display: none;
+}

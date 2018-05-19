@@ -3,6 +3,6 @@
 	margin-bottom: 30px;	/* this somehow prevents the bottom of the layout from going underneath the fixed footer ribbon */
     height: 100%;
     color: #C7C8B8;
-    font-family: 'Roboto',sans-serif;
+    font-family: $font-stack;
 	background-color: rgba(0,0,0,0.85);
 }

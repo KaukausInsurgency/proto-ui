@@ -9,10 +9,10 @@ var iconBuilder = (function () {
 
     function getSideClass(side) { // this function not available outside your module
         switch (side) {
-            case 0:
+            case 1:
                 return 'redfor-bg-icon';
                 break;
-            case 1:
+            case 2:
                 return 'blufor-bg-icon';
                 break;
             default:

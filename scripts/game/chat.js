@@ -29,10 +29,10 @@
 
         function getSideClass(side) {
             switch (side) {
-                case 0:
+                case 1:
                     return 'chat-redfor';
                     break;
-                case 1:
+                case 2:
                     return 'chat-blufor';
                     break;
                 default:

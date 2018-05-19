@@ -9,11 +9,14 @@
 
 @import 'game/variables';
 @import 'game/progressbar';
-@import 'game/server-description';
 @import 'game/header';
-@import 'game/game';
-@import 'game/live-map';
-@import 'game/chat';
-@import 'game/game-navigation';
-@import 'game/icons';
-@import 'game/online-players';
+@import 'game/server-description';
+@import 'game/game-section';
+
+@import 'game/live-map/variables';
+@import 'game/live-map/missions';
+@import 'game/live-map/live-map';
+@import 'game/live-map/chat';
+@import 'game/live-map/game-navigation';
+@import 'game/live-map/icons';
+@import 'game/live-map/online-players';

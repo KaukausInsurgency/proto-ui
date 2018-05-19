@@ -10,6 +10,13 @@ $chat-title-background-color: rgb(73, 73, 73);
 
 $chat-font-pack: Raleway,sans-serif;
 
+.chat-layout {
+	@extend %block-float;
+    @extend %live-map-footer-layout;
+    cursor: context-menu;
+    @include property-regular-hover(color, $footer-font-color, $footer-font-hover);
+}
+
 .chat-window {
     font-family: $chat-font-pack;
     width: 30vw;

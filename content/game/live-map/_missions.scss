@@ -1,0 +1,6 @@
+.missions-layout {
+	@extend %block-float;
+	@extend %live-map-footer-layout;
+    cursor: context-menu;
+    @include property-regular-hover(color, $footer-font-color, $footer-font-hover);
+}

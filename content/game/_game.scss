@@ -1,18 +1,16 @@
-$main-columns-height: 500px;
-
-
 .game-section {
 	display: flex; 
 	justify-content: center; 
 	flex-wrap: wrap; 
 	margin: 0 4em;
+	height: $game-section-min-height;  
 }
 
 .info-layout {
 	@extend %block-float;
 	min-width:200px; 
 	flex: 1;
-	height:$main-columns-height;  
+	
 	color:white; 
 	padding: 0.5em 0.5em;
 }

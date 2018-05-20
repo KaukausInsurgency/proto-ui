@@ -13,8 +13,6 @@ $progress-background-color: rgb(56, 56, 56);
 
 .progress-bar { 
   height: 20px;  /* Can be anything */
-  margin-left: 10%;
-  margin-right: 10%;
   position: relative;
   background: $progress-background-color;
   border-radius: 2px;

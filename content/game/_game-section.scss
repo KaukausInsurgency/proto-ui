@@ -3,14 +3,22 @@
 	justify-content: center; 
 	flex-wrap: wrap; 
 	margin: 0 4em;
-	height: $game-section-min-height;  
+
+	@media screen and (max-width: 1070px) {
+		margin: 0 2em;
+	}
+
+	@media screen and (max-width: 520px) {
+		margin: 0 1em;
+	}	
 }
 
 .info-layout {
 	@extend %block-float;
 	min-width:200px; 
 	flex: 1;
-	
+	margin-left: 10%;
+	margin-right: 10%;
 	color:white; 
 	padding: 0.5em 0.5em;
 }

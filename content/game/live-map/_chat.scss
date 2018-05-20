@@ -1,3 +1,5 @@
+$chat-window-height: 220px;
+$chat-window-width: 300px;
 $chat-neutral-color: #9b9b9b;
 $chat-redfor-color: #e85a5a;
 $chat-blufor-color: #5a8be8;
@@ -19,8 +21,8 @@ $chat-font-pack: Raleway,sans-serif;
 
 .chat-window {
     font-family: $chat-font-pack;
-    width: 30vw;
-    height: 25vh;
+    width: $chat-window-width;
+    height: $chat-window-height;
     padding: 0 0.1em 0.4em 0.1em;
     background: $chat-background-color;
     opacity: 0.85;

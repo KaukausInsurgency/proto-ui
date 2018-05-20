@@ -38,8 +38,8 @@ $live-map-height: 470px;
 }
 
 .live-map {
-	min-width:300px; 
 	max-width: $live-map-width;
+	@include calc( width, 80%, '100% - #{$nav-width-collapsed}');	/* body needs to be shifted left of the vertical navbar */
 	flex: 1;
 	height: $live-map-height; 
 	background-color: $footer-background-color;

@@ -88,3 +88,62 @@ table.online-players>tbody>tr:nth-child(odd) td{
 table.online-players>tbody>tr:nth-child(even) td{
     background-color:$table-data-row-color-even;
 }
+
+// hide side and ping columns if the screen is less than 760px
+@media screen and (max-width: 760px) {
+    table.online-players>tbody>tr>td:nth-child(3),
+    table.online-players>tbody>tr>td:nth-child(5),
+    table.online-players>thead>tr>th:nth-child(3),
+    table.online-players>thead>tr>th:nth-child(5){
+        display:none;
+    }
+ 
+    // reduce the size of the table
+    .online-players-layout {
+        width: 450px;
+    }
+}
+
+// next level - hide the lives column
+@media screen and (max-width: 613px) {
+    table.online-players>tbody>tr>td:nth-child(4),
+    table.online-players>thead>tr>th:nth-child(4){
+        display:none;
+    }
+
+    // reduce table size further
+    .online-players-layout {
+        width: 300px;
+    }
+
+    // reduce the font sizes
+    table.online-players>tbody>tr>td {
+        font-size: 0.6em;
+    }
+
+    table.online-players>thead>tr>th {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 427px) {
+    // hide the airframe column
+    table.online-players>tbody>tr>td:nth-child(1),
+    table.online-players>thead>tr>th:nth-child(1){
+        display:none;
+    }
+
+    // reduce the size even further
+    .online-players-layout {
+        width: 200px;
+    }
+
+    // reduce the font size further
+    table.online-players>thead>tr>th {
+        font-size: 0.7em;
+    }
+
+    table.online-players>caption {
+        font-size: 0.8em;
+    }
+}

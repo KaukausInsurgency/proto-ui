@@ -101,3 +101,14 @@ $nav-item-padding: 10px 8px 10px 16px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
+// hide everything but the online players menu item for small screens
+
+@media screen and (max-width: 520px) {
+	.game-nav > .game-dropdown {
+		display: none;
+	}
+
+	.game-nav > .game-dropdown:nth-child(1) {
+		display: block;
+	}
+}	

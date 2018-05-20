@@ -17,10 +17,23 @@
 	@extend %block-float;
 	min-width:200px; 
 	flex: 1;
-	margin-left: 10%;
-	margin-right: 10%;
+	margin-left: 2%;
+	margin-right: 2%;
 	color:white; 
 	padding: 0.5em 0.5em;
+
+	& > h2 {
+		font-size: 3em;
+		@media screen and (max-width: 1070px) {
+			font-size: 2em;
+		}
+	
+		@media screen and (max-width: 520px) {
+			font-size: 1em;
+		}	
+
+		text-align: center;
+	}    
 }
 
 

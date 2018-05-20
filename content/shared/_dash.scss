@@ -57,13 +57,14 @@ $dash-small-font-color: #C7C8B8;
 }
 
 .dash-row {
-    margin: auto 10% 0 10%;
+    //margin: auto 10% 0 10%;
     padding-top: 5px;
     padding-bottom: 5px;
     box-sizing: border-box;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
+    align-content: center;
     flex-wrap: wrap;
     ///border: 1px solid #d3d3d3;
     ///background-color: #66a8fb;
@@ -90,6 +91,10 @@ $dash-small-font-color: #C7C8B8;
         height: 73%;
         width: 2px;
     }
+}
+
+.dash-columns-4 {
+    width: 22%;
 }
 
 .dash-large-font {

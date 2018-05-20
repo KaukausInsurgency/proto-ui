@@ -30,6 +30,11 @@ $chat-font-pack: Raleway,sans-serif;
     border: 10px solid transparent;    
     border-top-left-radius: 0.25em;
     border-top-right-radius: 0.25em;
+
+    // reduce width 
+    @media screen and (max-width: 450px) {
+        width: 200px;
+    }
 }
 
 .chat-message-body {

@@ -30,6 +30,10 @@ $live-map-height: 470px;
     height:$live-map-footer-height; 
     @include calc( width, 80%, '100% - #{$live-map-nav-width}');
 	background:black;
+
+	@media screen and (max-width: 550px) {
+		display: none;
+	}
 }
 
 #googleMap {

@@ -102,6 +102,7 @@ $nav-item-padding: 10px 8px 10px 16px;
 }
 
 // hide everything but the online players menu item for small screens
+// also stop triggering the hover of content from appearing as it looks odd
 
 @media screen and (max-width: 520px) {
 	.game-nav > .game-dropdown {
@@ -110,5 +111,9 @@ $nav-item-padding: 10px 8px 10px 16px;
 
 	.game-nav > .game-dropdown:nth-child(1) {
 		display: block;
+	}
+
+	.game-dropdown:hover .game-dropdown-content {
+		display: none; 
 	}
 }	

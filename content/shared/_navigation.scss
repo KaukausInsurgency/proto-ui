@@ -32,7 +32,7 @@ body {
 
 /* The sidebar menu */
 .vnav {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
+    height: 120%; /* setting to 120 because on phones when scrolling you can see white background underneath near the bottom */
     width: $nav-width-collapsed; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */

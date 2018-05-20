@@ -31,8 +31,16 @@ $live-map-height: 470px;
     @include calc( width, 80%, '100% - #{$live-map-nav-width}');
 	background:black;
 
-	@media screen and (max-width: 550px) {
+	@media screen and (max-width: 450px) {
 		display: none;
+	}
+
+	& > div {
+		font-size: 1em;
+
+		@media screen and (max-width: 650px) {
+			font-size: 0.8em;
+		}
 	}
 }
 

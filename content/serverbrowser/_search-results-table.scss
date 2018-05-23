@@ -15,8 +15,6 @@ $sr-table-border: 1px solid rgb(73, 73, 73);
     margin-right: auto;
     margin-left: auto;
 
-    width: 1170px;
-
     // adds the shadow to the input button
     &>span>input {
         -webkit-appearance: none;
@@ -61,7 +59,6 @@ table.sr-table>thead {
 table.sr-table>thead>tr {
     display: table-row;
     vertical-align: inherit;
-    //background-color: $sr-head-bg-color;
     @include linear-gradient(background, #{$sr-head-bg-grad2-color}, #{$sr-head-bg-grad1-color});
 }
 

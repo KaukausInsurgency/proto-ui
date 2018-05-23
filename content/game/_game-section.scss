@@ -2,15 +2,6 @@
 	display: flex; 
 	justify-content: center; 
 	flex-wrap: wrap; 
-	margin: 0 4em;
-
-	@media screen and (max-width: 1070px) {
-		margin: 0 2em;
-	}
-
-	@media screen and (max-width: 520px) {
-		margin: 0 1em;
-	}	
 }
 
 .info-layout {

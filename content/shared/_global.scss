@@ -2,8 +2,20 @@
 	overflow: hidden;		/* this makes the containers size expand to match the total size of all it's child elements */
 	// margin-bottom: 30px;	/* this somehow prevents the bottom of the layout from going underneath the fixed footer ribbon */
     padding-bottom: 30px;
+    padding-left: 4em;
+    padding-right: 4em;
     height: 100%;
     color: #C7C8B8;
     font-family: $font-stack;
-	background-color: rgba(0,0,0,0.85);
+    background-color: rgba(0,0,0,0.85);
+    
+    @media screen and (max-width: 1070px) {
+		padding-left: 2em;
+        padding-right: 2em;
+	}
+
+	@media screen and (max-width: 520px) {
+		padding-left: 1em;
+        padding-right: 1em;
+	}	
 }

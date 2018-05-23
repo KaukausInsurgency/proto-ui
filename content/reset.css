@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	height: 100vh;
 }
 ol, ul {
 	list-style: none;
@@ -48,6 +49,7 @@ table {
 }
 html {
 	box-sizing: border-box;
+	min-height: 100%;
   }
   *, *:before, *:after {
 	box-sizing: inherit;

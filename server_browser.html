@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="content/reset.css">
+    <link rel="stylesheet" href="content/style.css">
+	<link rel="stylesheet" href="content/server-browser.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="content/dynatable/jquery.dynatable.css">
+    <link rel="stylesheet" href="content/tooltipster/tooltipster.bundle.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- Side navigation -->
+    <div class="prop-vnav prop-icons">
+    </div>
+    <div class="vnav">
+        <div class="vnav-btn-expander glass">
+            <i class="vnav-icon"></i>
+        </div>
+        <a class="glass" href="#">
+            <i class="fas fa-address-book vnav-icon"></i>
+            <span class="js-nav-text">KI</span>
+        </a>
+        <a class="glass" href="#">
+            <i class="fas fa-address-book vnav-icon"></i>
+            <span class="js-nav-text">Servers</span>
+        </a>
+        <div class="vnav-dropdown">
+            <a class="glass" href="#">
+                <i class="fas fa-address-book vnav-icon"></i>
+                <span class="js-nav-text">Stats</span>
+            </a>
+            <div class="vnav-dropdown-content">
+                <a class="glass" href="#">
+                    <i class="fas fa-address-book vnav-icon"></i>
+                    <span>Player Stats</span>
+                </a>
+                <a class="glass" href="#">
+                    <i class="fas fa-address-book vnav-icon"></i>
+                    <span>Server Stats</span>
+                </a>
+            </div>
+        </div>
+        <a class="glass" href="#">
+            <i class="fas fa-address-book vnav-icon"></i>
+            <span class="js-nav-text">Forums</span>
+        </a>
+        <a class="glass" href="#">
+            <i class="fas fa-address-book vnav-icon"></i>
+            <span class="js-nav-text">Donate</span>
+        </a>
+        <a class="glass" href="#">
+            <i class="fas fa-address-book vnav-icon"></i>
+            <span class="js-nav-text">GitHub</span>
+        </a>
+        <a class="glass" href="#">
+            <i class="fas fa-address-book vnav-icon"></i>
+            <span class="js-nav-text">DCS Post</span>
+        </a>
+    </div>
+    <section class="header">
+        <div class="header-image"></div>
+        <div class="header-color"></div>
+        <div class="header-info">
+            <h1>Kaukasus Insurgency</h1>
+        </div>
+    </section>
+    <!-- Page content -->
+    <div class="main">
+        <div class="sr-table-layout">
+            <h2 class="sr-table-title">Game Servers</h2>
+            <p class="sr-table-subtitle">This lists the status of all KI Game Servers</p>
+            <table id="servers-table" class="sr-table">
+                <thead>
+                    <tr>
+                        <th>Server Name</th>
+                        <th>IP Address</th>
+                        <th>Status</th>
+                        <th>Restarts In</th>
+                        <th>Online Players</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="clickable-row">
+                        <td>
+                            <div class="ServerID" style="display:none;">1</div>
+                            <b>Mock Gamers Virtual Wing 24/7 KI</b>
+                            <div class="sr-table-graph-icon">
+                                <i class="fas fa-chart-bar" title="View Server Statistics"></i>
+                            </div>
+                        </td>
+                        <td>254.193.45.23</td>
+                        <td>
+                            <i class="fas fa-circle" style="color:green;"></i>Online
+                        </td>
+                        <td>02:13:15</td>
+                        <td>23</td>
+                    </tr>
+                    <tr class="clickable-row">
+                        <td>
+                            <div class="ServerID" style="display:none;">1</div>
+                            <b>Mock Gamers Virtual Wing 24/7 KI</b>
+                            <div class="sr-table-graph-icon">
+                                <i class="fas fa-chart-bar" title="View Server Statistics"></i>
+                            </div>
+                        </td>
+                        <td>254.193.45.23</td>
+                        <td>
+                            <i class="fas fa-circle" style="color:red;"></i>Offline
+                        </td>
+                        <td>00:00:00</td>
+                        <td>0</td>
+                    </tr>
+                    <tr class="clickable-row">
+                        <td>
+                            <div class="ServerID" style="display:none;">1</div>
+                            <b>Mock Gamers Virtual Wing 24/7 KI</b>
+                            <div class="sr-table-graph-icon">
+                                <i class="fas fa-chart-bar" title="View Server Statistics"></i>
+                            </div>
+                        </td>
+                        <td>254.193.45.23</td>
+                        <td>
+                            <i class="fas fa-circle" style="color:yellow;"></i>Restarting
+                        </td>
+                        <td>00:00:00</td>
+                        <td>23</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="2LVAGRH3X425W">
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/dynatable/jquery.dynatable.js"></script>
+    <script src="scripts/tooltipster/tooltipster.bundle.js"></script>
+    <script src="scripts/serverbrowser/registertable.js"></script>
+    <script src="scripts/serverbrowser/stuff.js"></script>
+</body>
+
+</html>

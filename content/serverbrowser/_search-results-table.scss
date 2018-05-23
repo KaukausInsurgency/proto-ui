@@ -1,0 +1,120 @@
+$sr-cell-padding: 10px;
+$sr-head-font-size: 1em;
+$sr-body-font-size: 0.95em;
+$sr-body-bg-even-color: #333333;
+$sr-body-bg-odd-color: #393939;
+$sr-body-bg-hover-color: #4d4d4d;
+$sr-head-bg-grad1-color: rgb(55,55,55);
+$sr-head-bg-grad2-color: rgb(78, 78, 78);
+$sr-head-font-color: #C7C8B8;
+$sr-body-font-color: #ddded4;
+$sr-table-border: 1px solid rgb(73, 73, 73);
+
+.sr-table-layout {
+    box-sizing: border-box;
+    margin-right: auto;
+    margin-left: auto;
+
+    width: 1170px;
+
+    // adds the shadow to the input button
+    &>span>input {
+        -webkit-appearance: none;
+    }
+}
+
+.sr-table-title {
+    font-size: 30px;
+    font-family: $font-stack;
+    font-weight: 500;
+
+    margin-top: 20px;
+    margin-bottom: 10px;  
+}
+
+.sr-table-subtitle {
+    margin: 0 0 10px;
+}
+
+.sr-table-graph-icon {
+    float: right;
+    text-align: right;
+}
+
+
+
+.sr-table {
+    display: table; 
+    width: 100%;    // expand to full width of sr-table-layout
+    border: $sr-table-border;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 10px;
+}
+
+table.sr-table>thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+table.sr-table>thead>tr {
+    display: table-row;
+    vertical-align: inherit;
+    //background-color: $sr-head-bg-color;
+    @include linear-gradient(background, #{$sr-head-bg-grad2-color}, #{$sr-head-bg-grad1-color});
+}
+
+table.sr-table>thead>tr>th {
+    display: table-cell;  
+    border: $sr-table-border;
+    padding: $sr-cell-padding;
+    text-align: left;
+    font-weight: 600;
+    font-size: $sr-head-font-size;  
+    color: $sr-head-font-color; 
+
+    & > a {
+        text-decoration: none;
+        color: $sr-head-font-color; 
+    }
+}
+
+table.sr-table>tbody {
+    display: table-row-group;
+    vertical-align: middle;
+}
+
+table.sr-table>tbody>tr {
+    display: table-row;
+    vertical-align: inherit;
+}
+
+table.sr-table>tbody>tr>td {
+    display: table-cell;
+    vertical-align: baseline;
+    border: $sr-table-border;
+    padding: $sr-cell-padding;   
+    text-align: left;
+    font-size: $sr-body-font-size;
+    color: $sr-body-font-color;
+
+    & > b {
+        font-size: $sr-body-font-size;
+        font-weight: 600;
+        color: $sr-body-font-color;
+    }
+}
+
+table.sr-table>tbody>tr:nth-child(odd) {
+    background-color:$sr-body-bg-odd-color;
+}
+table.sr-table>tbody>tr:nth-child(even) {
+    background-color:$sr-body-bg-even-color;
+}
+
+table.sr-table>tbody>tr:hover {
+    background-color: $sr-body-bg-hover-color;
+    cursor: pointer;
+}
+

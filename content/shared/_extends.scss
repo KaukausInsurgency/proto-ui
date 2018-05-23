@@ -57,6 +57,7 @@
   
 	#{$property}: nth(nth($color-stops, 1), 1);
 	#{$property}: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+	#{$property}: -moz-linear-gradient($direction, $color-stops);
 	#{$property}: linear-gradient($direction, $color-stops);
 }
 

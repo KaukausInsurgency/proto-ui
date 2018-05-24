@@ -77,14 +77,17 @@ $sr-table-border: 1px solid rgb(73, 73, 73);
 // status icon colors
 .sr-status-online-icon {
     color:green;
+    opacity: 0.75;
 }
 
 .sr-status-offline-icon {
     color:red;
+    opacity: 0.75;
 }
 
 .sr-status-restart-icon {
     color:yellow;
+    opacity: 0.75;
 }
 
 // add a right margin to the status icons

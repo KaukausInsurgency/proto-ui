@@ -1,12 +1,13 @@
 ﻿function RegisterTable(tablesel, onClick)
 {
     function RegisterHandlers() {
-        $(tablesel + ' .clickable-row').click(onClick);
+        $(tablesel + ' .js-clickable').click(onClick);
     };
 
     $(tablesel).dynatable({
         writers: {
-            _rowWriter: myRowWriter
+            _rowWriter: myRowWriter,
+            _cellWriter: myCellWriter
         }
     }).bind('dynatable:afterUpdate', processingComplete);
 
@@ -22,8 +23,13 @@
             tr += cellWriter(columns[i], record);
         }
 
-        return '<tr class="clickable-row">' + tr + '</tr>';
+        return '<tr class="js-clickable">' + tr + '</tr>';
     };
+
+    function myCellWriter(column, record) {
+        var html = column.attributeWriter(record);
+        return '<td>' + html + '</td>';
+      };
 
     RegisterHandlers();
 }

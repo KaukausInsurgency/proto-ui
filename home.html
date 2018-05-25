@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="content/reset.css">
+    <link rel="stylesheet" href="content/style.css">
+    <link rel="stylesheet" href="content/home.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="content/dynatable/jquery.dynatable.css">
+    <link rel="stylesheet" href="content/tooltipster/tooltipster.bundle.css">
+    <link rel="stylesheet" href="content/tooltipster/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-borderless.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="scripts/tooltipster/tooltipster.bundle.js"></script>
+</head>
+
+<body>
+    <!-- Side navigation -->
+    <div class="prop-vnav prop-icons">
+    </div>
+    <div class="vnav">
+        <div class="vnav-btn-expander glass">
+            <i class="vnav-icon"></i>
+        </div>
+        <a class="glass" href="#">
+            <i class="fas fa-home fa-fw vnav-icon"></i>
+            <span class="js-nav-text">KI</span>
+        </a>
+        <a class="glass" href="#">
+            <i class="fas fa-server fa-fw vnav-icon"></i>
+            <span class="js-nav-text">Servers</span>
+        </a>
+        <div class="vnav-dropdown">
+            <a class="glass" href="#">
+                <i class="fas fa-signal fa-fw vnav-icon"></i>
+                <span class="js-nav-text">Stats</span>
+            </a>
+            <div class="vnav-dropdown-content">
+                <a class="glass" href="#">
+                    <i class="fas fa-portrait fa-fw vnav-icon"></i>
+                    <span>Player Stats</span>
+                </a>
+                <a class="glass" href="#">
+                    <i class="fas fa-server fa-fw vnav-icon"></i>
+                    <span>Server Stats</span>
+                </a>
+            </div>
+        </div>
+        <a class="glass" href="#">
+            <i class="fab fa-wpforms fa-fw vnav-icon"></i>
+            <span class="js-nav-text">Forums</span>
+        </a>
+        <a class="glass" href="#">
+            <i class="fas fa-donate fa-fw vnav-icon"></i>
+            <span class="js-nav-text">Donate</span>
+        </a>
+        <a class="glass" href="#">
+            <i class="fab fa-github fa-fw vnav-icon"></i>
+            <span class="js-nav-text">GitHub</span>
+        </a>
+        <a class="glass" href="#">
+            <i class="fas fa-newspaper fa-fw vnav-icon"></i>
+            <span class="js-nav-text">DCS Post</span>
+        </a>
+    </div>
+    <!-- Page content -->
+    <header class="video-section">
+        <video class="home-video" autoplay="autoplay" muted="muted" loop="loop" id="home-video">
+            <source src="/static/dcs_world.mp4">
+        </video>
+        <div class="video-overlay-container">
+            <div class="video-overlay">
+                <div class="video-overlay-intro">
+                    <h1>Kaukasus Insurgency</h1>
+                    <p>
+                        KI is a fully customizable multiplayer campaign engine that gives players a persistent DCS
+                        experience between a network of community-run servers.</p>
+                    <p>Whether you're looking to fly, be a part of the
+                        KI network of servers, or build your own
+                        KI missions be sure to start at our documentation.</p>
+                    <div class="video-overlay-title">
+                        <h1>Kaukasus Insurgency</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <section id="description">
+            <h1>Cloud Based Dynamic Campaign Framework</h1>
+            <p>Kaukasus Insurgency is an online dynamic campaign framework that opens up tons of new challenges and excitement
+                within the DCS community.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus, ea. Veritatis ut dolorum nisi! Consequuntur,
+                laboriosam eius! Esse harum autem magni corrupti suscipit, quaerat accusantium. Eum nulla odit non reiciendis?</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque dolore a rerum iste molestiae cumque debitis
+                error sequi iusto, porro placeat tempore exercitationem illum. Iusto rerum accusamus vel aut adipisci placeat,
+                ipsam voluptatibus eligendi dolorem molestias dicta incidunt nisi repellendus dignissimos recusandae reiciendis.
+                Commodi repellat praesentium velit, eos corporis voluptatibus soluta beatae perspiciatis possimus, eum ducimus
+                consequatur optio, dicta illum aliquid iusto quas vel nisi. Eos ducimus cumque et obcaecati dolores tempore
+                sit beatae atque possimus delectus maiores ratione fugiat labore nobis, incidunt, assumenda, quod accusamus
+                minima voluptates. Porro et quos eaque, tempora consectetur quasi repudiandae? Ab, ad alias possimus reiciendis,
+                laborum deleniti nostrum esse est repudiandae eligendi distinctio dolorem ipsam reprehenderit itaque culpa
+                dolores consequuntur nam? Voluptatum, laboriosam hic!</p>
+        </section>
+        <section id="features">
+            <h1>Features</h1>
+            <div class="thumbnail-layout-2">
+                <div class="thumbnail">
+                    <img src="/static/home/code.jpg">
+                    <div class="caption">
+                        <h3>Persistant Data</h3>
+                        <p>Campaign data is persisted across server restarts, and player stats are recorded and tracked live
+                            on our site</p>
+                    </div>
+                </div>
+            </div>
+            <div class="thumbnail-layout-2">
+                <div class="thumbnail">
+                    <img src="/static/home/a.jpg">
+                    <div class="caption">
+                        <h3>Dynamic Content</h3>
+                        <p>No two campaigns will play the same!</p>
+                        <p>Tasks, Enemies, and Content are dynamically generated on the fly, with lots of room to custimize
+                            and add your personal touch.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="thumbnail-layout-3">
+                <div class="thumbnail">
+                    <img src="/static/home/code.jpg">
+
+                    <div class="caption">
+                        <h3>Design it your way</h3>
+                        <p>Customize and design your very own dynamic campaign with our powerful and flexible framework.</p>
+                        <p>Our framework allows you to customize:</p>
+                        <ul>
+                            <li>Objectives</li>
+                            <li>Side Missions</li>
+                            <li>JTACs</li>
+                            <li>Air Drops</li>
+                            <li>AI Commander</li>
+                            <li>And
+                                <b>Much</b> More!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="thumbnail-layout-3">
+                <div class="thumbnail">
+                    <img src="/static/home/code.jpg">
+
+                    <div class="caption">
+                        <h3>Design it your way</h3>
+                        <p>Customize and design your very own dynamic campaign with our powerful and flexible framework.</p>
+                        <p>Our framework allows you to customize:</p>
+                        <ul>
+                            <li>Objectives</li>
+                            <li>Side Missions</li>
+                            <li>JTACs</li>
+                            <li>Air Drops</li>
+                            <li>AI Commander</li>
+                            <li>And
+                                <b>Much</b> More!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="thumbnail-layout-3">
+                <div class="thumbnail">
+                    <img src="/static/home/b.jpg">
+
+                    <div class="caption">
+                        <h3>Cloud Hosting</h3>
+
+                        <p>We host your games page, integrating awesome features like:</p>
+                        <ul>
+                            <li>Live-Map</li>
+                            <li>Simple Radio</li>
+                            <li>Discord</li>
+                            <li>Team Speak</li>
+                            <li>In Game Chat &amp; Events</li>
+                            <li>And More!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="community">
+            <h1>Cloud Based Dynamic Campaign Framework</h1>
+            <p>Kaukasus Insurgency is an online dynamic campaign framework that opens up tons of new challenges and excitement
+                within the DCS community.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus, ea. Veritatis ut dolorum nisi! Consequuntur,
+                laboriosam eius! Esse harum autem magni corrupti suscipit, quaerat accusantium. Eum nulla odit non reiciendis?</p>
+        </section>
+    </div>
+    <div id="footer">
+        <div>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="2LVAGRH3X425W">
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/dynatable/jquery.dynatable.js"></script>
+    <script src="scripts/shared/shared.js"></script>
+</body>
+
+</html>

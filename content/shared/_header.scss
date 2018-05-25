@@ -16,6 +16,12 @@
     height: 100%;
 }
 
+.header-image-home {
+    background-image: url("/static/bg-home.jpg");
+    background-size: cover;
+    filter: contrast(.8) grayscale(.8) brightness(.7);
+}
+
 .header-image-game {
     background-image: url("/static/bg-header.jpg");
     background-size: cover;

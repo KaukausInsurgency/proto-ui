@@ -98,8 +98,12 @@ td>i{
 // style for the little graph icon beside the server name that links to server stats
 .sr-table-graph-icon {
     float: right;
-    text-align: right;
-
+    text-align: center;
+    width: 25px;
+    border-radius: 5px;
+    padding-left: auto;
+    padding-right: auto;
+    background-color: #0a0a0a;
     &:hover {
         background-color: $sr-icon-bg-hover-color;
     }

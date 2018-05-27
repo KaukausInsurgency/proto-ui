@@ -65,6 +65,13 @@
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px; }
 
+.video-overlay-button {
+  position: absolute;
+  left: 20%;
+  bottom: 35%;
+  padding: 0 2em;
+  width: 40%; }
+
 .ribbon-bg {
   position: absolute;
   bottom: 0%;
@@ -110,9 +117,9 @@ a.pretty-button {
   .pretty-box-button:hover {
     background-color: #333;
     color: #CACAC4;
-    -webkit-box-shadow: 0px 0px 26px 9px rgba(138, 138, 138, 0.75);
-    -moz-box-shadow: 0px 0px 26px 9px rgba(138, 138, 138, 0.75);
-    box-shadow: 0px 0px 26px 9px rgba(138, 138, 138, 0.75);
+    -webkit-box-shadow: 0px 0px 26px 4px rgba(138, 138, 138, 0.75);
+    -moz-box-shadow: 0px 0px 26px 4px rgba(138, 138, 138, 0.75);
+    box-shadow: 0px 0px 26px 4px rgba(138, 138, 138, 0.75);
     transition: 0.5s; }
 
 .pretty-box-text {

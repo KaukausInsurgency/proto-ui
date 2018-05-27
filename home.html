@@ -68,134 +68,65 @@
     </div>
     <!-- Page content -->
     <header class="video-section">
-        <video class="home-video" autoplay="autoplay" muted="muted" loop="loop" id="home-video">
+        <video class="video" autoplay="autoplay" muted="muted" loop="loop" id="home-video">
             <source src="/static/dcs_world.mp4">
         </video>
         <div class="video-overlay-container">
+            <div class="form-layout">
+                <form class="form-search" action="/Home/Search" method="post">
+                    <input id="Query" name="Query" type="text" value="">
+                    <input type="submit" class="pretty-box pretty-box-button glass" value="Search" id="btnSearchSubmit">
+                </form>
+            </div>
             <div class="video-overlay">
                 <div class="video-overlay-intro">
                     <h1>Kaukasus Insurgency</h1>
                     <p>
-                        KI is a fully customizable multiplayer campaign engine that gives players a persistent DCS
-                        experience between a network of community-run servers.</p>
-                    <p>Whether you're looking to fly, be a part of the
-                        KI network of servers, or build your own
-                        KI missions be sure to start at our documentation.</p>
-                    <div class="video-overlay-title">
-                        <h1>Kaukasus Insurgency</h1>
+                        KI is a fully customizable multiplayer campaign engine that gives players a persistent DCS experience between a network of
+                        community-run servers.</p>
+                    <p>Whether you're looking to fly, be a part of the KI network of servers, or build your own KI missions
+                        be sure to start at our documentation.</p>
+                </div>
+            </div>
+            <div class="ribbon-bg">
+                <div class="ribbon-layout">
+                    <div class="layout-3">
+                        <a href="http://www.facebook.com/arma3official" target="_blank" class="pretty-button">
+                            <div class="pretty-box pretty-box-button">
+                                <i class="fab fa-discord fa-2x fa-fw"></i>
+                            </div>
+                            <div class="pretty-box pretty-box-text">
+                                <span>KI ON</span>
+                                <br>DISCORD
+                            </div>
+                        </a>
+                    </div>
+                    <div class="layout-3">
+                        <a href="http://www.facebook.com/arma3official" target="_blank" class="pretty-button">
+                            <div class="pretty-box pretty-box-button">
+                                <i class="fab fa-youtube fa-2x fa-fw"></i>
+                            </div>
+                            <div class="pretty-box pretty-box-text">
+                                <span>KI ON</span>
+                                <br>YOUTUBE
+                            </div>
+                        </a>
+                    </div>
+                    <div class="layout-3">
+                        <a href="http://www.facebook.com/arma3official" target="_blank" class="pretty-button">
+                            <div class="pretty-box pretty-box-button">
+                                <i class="fab fa-wpforms fa-2x fa-fw"></i>
+                            </div>
+                            <div class="pretty-box pretty-box-text">
+                                <span>KI ON</span>
+                                <br>FORUMS
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    <div class="main">
-        <section id="description">
-            <h1>Cloud Based Dynamic Campaign Framework</h1>
-            <p>Kaukasus Insurgency is an online dynamic campaign framework that opens up tons of new challenges and excitement
-                within the DCS community.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus, ea. Veritatis ut dolorum nisi! Consequuntur,
-                laboriosam eius! Esse harum autem magni corrupti suscipit, quaerat accusantium. Eum nulla odit non reiciendis?</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque dolore a rerum iste molestiae cumque debitis
-                error sequi iusto, porro placeat tempore exercitationem illum. Iusto rerum accusamus vel aut adipisci placeat,
-                ipsam voluptatibus eligendi dolorem molestias dicta incidunt nisi repellendus dignissimos recusandae reiciendis.
-                Commodi repellat praesentium velit, eos corporis voluptatibus soluta beatae perspiciatis possimus, eum ducimus
-                consequatur optio, dicta illum aliquid iusto quas vel nisi. Eos ducimus cumque et obcaecati dolores tempore
-                sit beatae atque possimus delectus maiores ratione fugiat labore nobis, incidunt, assumenda, quod accusamus
-                minima voluptates. Porro et quos eaque, tempora consectetur quasi repudiandae? Ab, ad alias possimus reiciendis,
-                laborum deleniti nostrum esse est repudiandae eligendi distinctio dolorem ipsam reprehenderit itaque culpa
-                dolores consequuntur nam? Voluptatum, laboriosam hic!</p>
-        </section>
-        <section id="features">
-            <h1>Features</h1>
-            <div class="thumbnail-layout-2">
-                <div class="thumbnail">
-                    <img src="/static/home/code.jpg">
-                    <div class="caption">
-                        <h3>Persistant Data</h3>
-                        <p>Campaign data is persisted across server restarts, and player stats are recorded and tracked live
-                            on our site</p>
-                    </div>
-                </div>
-            </div>
-            <div class="thumbnail-layout-2">
-                <div class="thumbnail">
-                    <img src="/static/home/a.jpg">
-                    <div class="caption">
-                        <h3>Dynamic Content</h3>
-                        <p>No two campaigns will play the same!</p>
-                        <p>Tasks, Enemies, and Content are dynamically generated on the fly, with lots of room to custimize
-                            and add your personal touch.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="thumbnail-layout-3">
-                <div class="thumbnail">
-                    <img src="/static/home/code.jpg">
-
-                    <div class="caption">
-                        <h3>Design it your way</h3>
-                        <p>Customize and design your very own dynamic campaign with our powerful and flexible framework.</p>
-                        <p>Our framework allows you to customize:</p>
-                        <ul>
-                            <li>Objectives</li>
-                            <li>Side Missions</li>
-                            <li>JTACs</li>
-                            <li>Air Drops</li>
-                            <li>AI Commander</li>
-                            <li>And
-                                <b>Much</b> More!</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="thumbnail-layout-3">
-                <div class="thumbnail">
-                    <img src="/static/home/code.jpg">
-
-                    <div class="caption">
-                        <h3>Design it your way</h3>
-                        <p>Customize and design your very own dynamic campaign with our powerful and flexible framework.</p>
-                        <p>Our framework allows you to customize:</p>
-                        <ul>
-                            <li>Objectives</li>
-                            <li>Side Missions</li>
-                            <li>JTACs</li>
-                            <li>Air Drops</li>
-                            <li>AI Commander</li>
-                            <li>And
-                                <b>Much</b> More!</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="thumbnail-layout-3">
-                <div class="thumbnail">
-                    <img src="/static/home/b.jpg">
-
-                    <div class="caption">
-                        <h3>Cloud Hosting</h3>
-
-                        <p>We host your games page, integrating awesome features like:</p>
-                        <ul>
-                            <li>Live-Map</li>
-                            <li>Simple Radio</li>
-                            <li>Discord</li>
-                            <li>Team Speak</li>
-                            <li>In Game Chat &amp; Events</li>
-                            <li>And More!</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="community">
-            <h1>Cloud Based Dynamic Campaign Framework</h1>
-            <p>Kaukasus Insurgency is an online dynamic campaign framework that opens up tons of new challenges and excitement
-                within the DCS community.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus, ea. Veritatis ut dolorum nisi! Consequuntur,
-                laboriosam eius! Esse harum autem magni corrupti suscipit, quaerat accusantium. Eum nulla odit non reiciendis?</p>
-        </section>
-    </div>
     <div id="footer">
         <div>
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">

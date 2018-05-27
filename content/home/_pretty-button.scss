@@ -1,0 +1,60 @@
+a.pretty-button {     
+    text-decoration: none;
+}
+// layout
+.pretty-button {
+    //padding: 1px 5px;
+    // ignore double tap events, and make tap events more faster
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.pretty-button i {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.pretty-box {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 1px 5px;
+}
+
+// the box around the icon
+.pretty-box-button {
+    background-color: $font-color;
+    color: #333;
+    border-color: #ccc;
+    border-radius: 10px;
+    text-align: center;
+    
+
+    &:hover {
+        background-color: #333;
+        color: $font-color;
+        @include box-shadow(0px 0px 26px 9px rgba(138,138,138,0.75));
+        transition: 0.5s;
+    }
+}
+
+.pretty-box-text {
+    background-color: transparent;
+    border-color: transparent;
+    text-align: left;
+    color: $font-color;
+    text-decoration: none;
+
+    &>span {
+        text-decoration: none;
+    }
+}
+
+
+
+.layout-3 {
+    padding: 10px;
+    float: left;
+    width: 33.3333333333%; 
+}

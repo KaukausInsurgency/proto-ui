@@ -1,7 +1,19 @@
 $(function() {
-	$('.vnav-dropdown-content').addClass('vnav-collapsed');	// by default the ribbon is collapsed
-	$('.js-nav-text').hide();	
-	$('.vnav-btn-expander').children('i').addClass($('.prop-vnav').css('--font-arrow-expand').trim());
+
+	var width = $(window).width();
+	if (width > 450)
+	{
+		$('.vnav-dropdown-content').addClass('vnav-expanded');	// by default the ribbon is expanded
+		$('.vnav-btn-expander').children('i').addClass($('.prop-vnav').css('--font-arrow-collapse').trim());
+		$('.vnav').css('width',$('.prop-vnav').css('--max-width').trim());
+	}
+	else
+	{
+		$('.vnav-dropdown-content').addClass('vnav-collapsed');	// by default the ribbon is collapsed
+		$('.js-nav-text').hide();	
+		$('.vnav-btn-expander').children('i').addClass($('.prop-vnav').css('--font-arrow-expand').trim());
+	}
+	
 	$('.vnav-btn-expander').click(function()
 	{
 		var expander_icon = $(this).children('i');

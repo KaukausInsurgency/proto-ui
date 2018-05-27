@@ -1,9 +1,7 @@
 @import 'shared/variables';
 @import 'shared/extends';
 
-@import 'home/common';
 @import 'home/video';
-@import 'home/thumbnail';
-@import 'home/description';
-@import 'home/features';
-@import 'home/community';
+@import 'home/ribbon-layout';
+@import 'home/pretty-button';
+@import 'home/form-layout';

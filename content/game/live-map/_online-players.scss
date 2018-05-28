@@ -1,22 +1,19 @@
-$table-neutral-color: #9b9b9b;
-$table-redfor-color: #e85a5a;
-$table-blufor-color: #5a8be8;
-$table-font-color: #dadada;
-$table-background-color: #111;
-$table-header-column-color: #d8d8d8;
-$table-data-row-color-odd: #272727;
-$table-data-row-color-even: #474747;
+$table-font-color: palette(dark-font, 'gray-nickel');
+$table-background-color: palette(dark, 'cod-gray');
+$table-header-column-color: palette(dark-font, 'gallery');
+$table-data-row-color-odd: palette(dark, 'mine-shaft');
+$table-data-row-color-even: palette(dark, 'tundora');
 
 .online-players-redfor {
-    color: $chat-redfor-color;
+    color: palette(game-font, 'redfor');
 }
 
 .online-players-blufor {
-    color: $chat-blufor-color;
+    color: palette(game-font, 'blufor');
 }
 
 .online-players-neutral {
-    color: $chat-neutral-color;
+    color: palette(game-font, 'neutral');
 }
 
 .online-players-layout {

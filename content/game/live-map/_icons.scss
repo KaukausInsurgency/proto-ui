@@ -1,17 +1,17 @@
 .redfor-bg-icon {
-    color: #DF1E1E;
+    color: palette(game, 'redfor');
 }
 
 .blufor-bg-icon {
-    color: #1e4bdf;
+    color: palette(game, 'blufor');
 }
 
 .neutral-bg-icon {
-    color: #4e4e4e;
+    color: palette(game, 'neutral');
 }
 
 .icon-color {
-    color: white;
+    color: white;   // this color should never be used
 }
 
 /* hidden properties used in javascript */

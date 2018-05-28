@@ -1,16 +1,13 @@
 $chat-window-height: 220px;
 $chat-window-width: 300px;
-$chat-neutral-color: #9b9b9b;
-$chat-redfor-color: #e85a5a;
-$chat-blufor-color: #5a8be8;
 
-$chat-background-color: #000000; 
-$chat-text-color: #ebebeb;
+$chat-background-color: palette(dark, 'cod-gray'); 
+$chat-text-color: palette(dark-font, 'gallery');
 
-$chat-title-text-color: #ebebeb;
-$chat-title-background-color: #494949;
+$chat-title-text-color: palette(dark-font, 'gallery');
+$chat-title-background-color: palette(dark, 'light-tundora');
 
-$chat-font-pack: Raleway,sans-serif;
+$chat-font-pack: $seconday-font-stack;
 
 .chat-layout {
 	@extend %block-float;
@@ -63,15 +60,15 @@ $chat-font-pack: Raleway,sans-serif;
 }
 
 .chat-redfor {
-    color: $chat-redfor-color;
+    color: palette(game-font, 'redfor');
 }
 
 .chat-blufor {
-    color: $chat-blufor-color;
+    color: palette(game-font, 'blufor');
 }
 
 .chat-neutral {
-    color: $chat-neutral-color;
+    color: palette(game-font, 'neutral');
 }
 
 .chat-username {

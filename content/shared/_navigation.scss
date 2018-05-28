@@ -1,8 +1,6 @@
 $nav-font-size: 1.0em;
-$nav-font-color: $font-color;
-$nav-font-hover: #f1f1f1;
-$nav-background-color: #0a0a0a;
-$nav-background-color-hover: #444;
+$nav-font-color: $primary-font-color;
+$nav-font-hover: $primary-font-color-hover;
 $nav-item-padding: 10px 8px 10px 16px;
 
 /* settings that need to be applied to body as part of the vertical navbar */

@@ -6,9 +6,9 @@
     padding-right: 4em;
     //height: 100%;
     min-height: 75vh;
-    color: $font-color;
-    font-family: $font-stack;
-    background-color: palette(dark, mine-shaft);
+    color: $primary-font-color;
+    font-family: $primary-font-stack;
+    background-color: palette(dark, 'mine-shaft');
     
     @media screen and (max-width: 1070px) {
 		padding-left: 2em;

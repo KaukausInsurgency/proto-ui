@@ -2,7 +2,7 @@
     position: relative;
     max-height: 90vh;
     overflow: hidden;
-    font-family: $font-stack;
+    font-family: $primary-font-stack;
 }
 
 // the actual video object
@@ -43,7 +43,7 @@
     bottom: 40%;
     padding: 0 2em;
     width: 40%;
-    color: $font-color;
+    color: $primary-font-color;
 }
 
 .video-overlay-intro>h1{

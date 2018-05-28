@@ -1,8 +1,6 @@
 $nav-font-size: 1.1em;
-$nav-font-color: $font-color;
-$nav-font-hover: #f1f1f1;
-$nav-background-color: #111;
-$nav-background-color-hover: #444;
+$nav-font-color: $primary-font-color;
+$nav-font-hover: $primary-font-color-hover;
 $nav-item-padding: 10px 8px 10px 16px;
 
 .prop-game-nav {
@@ -24,7 +22,6 @@ $nav-item-padding: 10px 8px 10px 16px;
     @extend %block-float;
 	height: $game-section-min-height; 
 	position: absolute;
-	color:white;
     width: $nav-width-collapsed; /* Set the width of the sidebar */
     /*position: fixed;  Fixed Sidebar (stay in place on scroll) */
 	left: 650px;

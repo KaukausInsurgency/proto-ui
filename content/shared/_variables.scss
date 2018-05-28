@@ -1,4 +1,19 @@
 $nav-width-expanded: 160px;
 $nav-width-collapsed: 50px;
-$font-stack: 'Roboto',sans-serif;
-$font-color: palette(dark-font, gray-nickel);
+
+$primary-font-stack: 'Roboto',sans-serif;
+$seconday-font-stack: Raleway,sans-serif;
+
+// the way the primary font should look
+$primary-font-color: palette(dark-font, 'gray-nickel');
+$primary-font-color-hover: palette(dark-font, 'seashell');
+
+$secondary-font-color: palette(dark-font, 'gallery');
+$secondary-font-color-hover: palette(dark-font, 'seashell');
+
+// primary background color
+$primary-background-color: palette(dark, 'mine-shaft');
+
+// navigation background color
+$nav-background-color: palette(dark, 'cod-gray');
+$nav-background-color-hover: palette(dark, 'dark-tundora');

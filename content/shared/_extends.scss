@@ -74,12 +74,12 @@
 	}
 }
 
-@mixin color-regular-hover($font-color-reg, $font-color-hover, $background-color-reg, $background-color-hover) {
-  color: $font-color-reg;
+@mixin color-regular-hover($primary-font-color-reg, $primary-font-color-hover, $background-color-reg, $background-color-hover) {
+  color: $primary-font-color-reg;
 	background-color: $background-color-reg;
 
 	&:hover {
-		color: $font-color-hover;
+		color: $primary-font-color-hover;
 		background-color: $background-color-hover;
 	}
 }

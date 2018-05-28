@@ -46,7 +46,7 @@
   bottom: 40%;
   padding: 0 2em;
   width: 40%;
-  color: #CACAC4; }
+  color: palette(dark-font, gray-nickel); }
 
 .video-overlay-intro > h1 {
   display: inline-block;
@@ -109,14 +109,14 @@ a.pretty-button {
   padding: 1px 5px; }
 
 .pretty-box-button {
-  background-color: #CACAC4;
+  background-color: palette(dark-font, gray-nickel);
   color: #333;
   border-color: #ccc;
   border-radius: 10px;
   text-align: center; }
   .pretty-box-button:hover {
     background-color: #333;
-    color: #CACAC4;
+    color: palette(dark-font, gray-nickel);
     -webkit-box-shadow: 0px 0px 26px 4px rgba(138, 138, 138, 0.75);
     -moz-box-shadow: 0px 0px 26px 4px rgba(138, 138, 138, 0.75);
     box-shadow: 0px 0px 26px 4px rgba(138, 138, 138, 0.75);
@@ -126,7 +126,7 @@ a.pretty-button {
   background-color: transparent;
   border-color: transparent;
   text-align: left;
-  color: #CACAC4;
+  color: palette(dark-font, gray-nickel);
   text-decoration: none; }
   .pretty-box-text > span {
     text-decoration: none; }

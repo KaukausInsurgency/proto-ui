@@ -8,7 +8,7 @@
     min-height: 75vh;
     color: $font-color;
     font-family: $font-stack;
-    background-color: rgba(0,0,0,0.85);
+    background-color: palette(dark, mine-shaft);
     
     @media screen and (max-width: 1070px) {
 		padding-left: 2em;

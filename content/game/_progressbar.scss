@@ -39,8 +39,8 @@ $progress-background-color: rgb(56, 56, 56);
   background-color: $progress-active-color;
   @include linear-gradient(background-image,
     center bottom,
-    rgb(42,159,214) 37%,
-    rgb(107, 177, 209) 69%
+    #{$progress-active-color} 37%,
+    #{$progress-active-color} 69%
   );
   box-shadow: 
     inset 0 2px 9px  rgba(255,255,255,0.3),

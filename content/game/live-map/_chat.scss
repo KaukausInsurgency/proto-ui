@@ -9,13 +9,6 @@ $chat-title-background-color: palette(dark, 'light-tundora');
 
 $chat-font-pack: $seconday-font-stack;
 
-.chat-layout {
-	@extend %block-float;
-    @extend %live-map-footer-layout;
-    cursor: context-menu;
-    @include property-regular-hover(color, $footer-font-color, $footer-font-hover);
-}
-
 .chat-window {
     font-family: $chat-font-pack;
     width: $chat-window-width;
@@ -54,7 +47,7 @@ $chat-font-pack: $seconday-font-stack;
     }
 }
 
-.chat-layout:hover .chat-window {
+.live-map-footer-column:hover .chat-window {
     display: block; 
     transition-delay:1s;
 }

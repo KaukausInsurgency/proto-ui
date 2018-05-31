@@ -12,7 +12,8 @@ $secondary-font-color: palette(dark-font, 'gallery');
 $secondary-font-color-hover: palette(dark-font, 'seashell');
 
 // primary background color
-$primary-background-color: palette(dark, 'mine-shaft');
+$primary-background-color: #212121; //palette(dark, 'mine-shaft');
+$secondary-background-color: palette(dark, 'light-tundora');
 
 // navigation background color
 $nav-background-color: palette(dark, 'cod-gray');

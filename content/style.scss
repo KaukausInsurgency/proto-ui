@@ -1,12 +1,5 @@
-@import 'shared/fontawesome';
-@import 'shared/palettes';
-@import 'shared/variables';
-@import 'shared/extends';
-@import 'shared/effects';
-@import 'shared/global';
-@import 'shared/dash';
-@import 'shared/navigation';
-@import 'shared/button';
-@import 'shared/header';
-@import 'shared/footer';
-@import 'shared/input';
+@import 'utils/module';
+
+@import 'shared/module';
+
+@import 'components/module';

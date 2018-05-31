@@ -8,7 +8,7 @@
     min-height: 75vh;
     color: $primary-font-color;
     font-family: $primary-font-stack;
-    background-color: palette(dark, 'mine-shaft');
+    background-color: $primary-background-color;
     
     @media screen and (max-width: 1070px) {
 		padding-left: 2em;

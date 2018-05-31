@@ -1,9 +1,8 @@
-a.pretty-button {     
+a.link-button-container {     
     text-decoration: none;
 }
 // layout
-.pretty-button {
-    //padding: 1px 5px;
+.link-button-container {
     // ignore double tap events, and make tap events more faster
     -ms-touch-action: manipulation;
     touch-action: manipulation;
@@ -11,19 +10,19 @@ a.pretty-button {
     border: 1px solid transparent;
 }
 
-.pretty-button i {
+.link-button-container i {
     margin-top: 4px;
     margin-bottom: 4px;
 }
 
-.pretty-box {
+.link-button-align {
     display: table-cell;
     vertical-align: middle;
     padding: 1px 5px;
 }
 
 // the box around the icon
-.pretty-box-button {
+.link-button {
     background-color: $primary-font-color;
     color: #333;
     border-color: #ccc;
@@ -39,7 +38,7 @@ a.pretty-button {
     }
 }
 
-.pretty-box-text {
+.link-button-span {
     background-color: transparent;
     border-color: transparent;
     text-align: left;

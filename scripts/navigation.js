@@ -1,73 +1,100 @@
 $(function () {
+	var vnavMaxWidth = $('.prop-vnav').css('--max-width').trim();
+	var vnavMinWidth = $('.prop-vnav').css('--min-width').trim();
+	var $expandClass = $('.prop-vnav').css('--font-arrow-expand').trim();
+	var $collapseClass = $('.prop-vnav').css('--font-arrow-collapse').trim();
 
+	var $vnav = $('.vnav');
+	var $vnavDropdownContent = $('.vnav-dropdown-content');
 	var width = $(window).width();
+
+	var fncAnimate = function ($el, width, animComplete) {
+		$el.stop(true).animate({
+			width: width
+		}, 200, animComplete);
+	}
+
+	var toggleNavExpand = function(shouldExpand) {
+		if (shouldExpand) {
+			$vnavDropdownContent.removeClass('vnav-collapsed');
+			$vnavDropdownContent.addClass('vnav-expanded');
+			$vnav.removeClass('vnav-collapsed');
+			$vnav.addClass('vnav-expanded');
+		}
+		else {
+			$vnavDropdownContent.removeClass('vnav-expanded');
+			$vnavDropdownContent.addClass('vnav-collapsed');
+			$vnav.removeClass('vnav-expanded');
+			$vnav.addClass('vnav-collapsed');
+		}
+	}
+
 	if (width > 450) {
-		$('.vnav-dropdown-content').addClass('vnav-expanded');	// by default the ribbon is expanded
-		$('.vnav-btn-expander').children('i').addClass($('.prop-vnav').css('--font-arrow-collapse').trim());
-		$('.vnav').addClass('vnav-expanded');
-		$('.vnav').css('width', $('.prop-vnav').css('--max-width').trim());
+		$vnavDropdownContent.addClass('vnav-expanded');	// by default the ribbon is expanded
+		$('.vnav-btn-expander').children('i').addClass($collapseClass);
+		$vnav.addClass('vnav-expanded');
+		$vnav.css('width', vnavMaxWidth);
 	}
 	else {
-		$('.vnav-dropdown-content').addClass('vnav-collapsed');	// by default the ribbon is collapsed
+		$vnavDropdownContent.addClass('vnav-collapsed');	// by default the ribbon is collapsed
+		$('.vnav-btn-expander').children('i').addClass($expandClass);
 		$('.js-nav-text').hide();
-		$('.vnav').addClass('vnav-collapsed');
-		$('.vnav-btn-expander').children('i').addClass($('.prop-vnav').css('--font-arrow-expand').trim());
+		$vnav.addClass('vnav-collapsed');
+		
 	}
 
 	$('.vnav-btn-expander').click(function () {
 		var expander_icon = $(this).children('i');
-		var expand_class = $('.prop-vnav').css('--font-arrow-expand').trim();
-		var collapse_class = $('.prop-vnav').css('--font-arrow-collapse').trim();
-		var fnc_animate = function (width, animComplete) {
-			$('.vnav').stop(true).animate({
-				width: width
-			}, 200, animComplete);
-		}
-
-		if (expander_icon.hasClass(expand_class))	// expand the nav ribbon
+		if (expander_icon.hasClass($expandClass))	// expand the nav ribbon
 		{
-			expander_icon.removeClass(expand_class);
-			expander_icon.addClass(collapse_class);
-			fnc_animate($('.prop-vnav').css('--max-width').trim(),
-				function () {
+			expander_icon.removeClass($expandClass);
+			expander_icon.addClass($collapseClass);
+			fncAnimate($vnav, vnavMaxWidth,
+				function() {
 					$('.js-nav-text').show();
 				});
-			$('.vnav-dropdown-content').removeClass('vnav-collapsed');
-			$('.vnav-dropdown-content').addClass('vnav-expanded');
-			$('.vnav').removeClass('vnav-collapsed');
-			$('.vnav').addClass('vnav-expanded');
+				toggleNavExpand(true);
 		}
 		else  // collapse the nav ribbon
 		{
-			expander_icon.removeClass(collapse_class);
-			expander_icon.addClass(expand_class);
+			expander_icon.removeClass($collapseClass);
+			expander_icon.addClass($expandClass);
 			$('.js-nav-text').hide();
-			fnc_animate($('.prop-vnav').css('--min-width').trim());
-			$('.vnav-dropdown-content').removeClass('vnav-expanded');
-			$('.vnav-dropdown-content').addClass('vnav-collapsed');
-			$('.vnav').removeClass('vnav-expanded');
-			$('.vnav').addClass('vnav-collapsed');
+			fncAnimate($vnav, vnavMinWidth);
+			toggleNavExpand(false);
 		}
 	});
 
 
-	$('.vnav a').hover(function (e) {
+	$('.vnav a').hover(function(e) {
 		// only animate if the nav bar is collapsed
-		if ($('.vnav').hasClass('vnav-collapsed')) {
-			$(this).stop(true).animate({
-				width: $('.prop-vnav').css('--max-width').trim()
-			}, 200,
-				function () {
-					$(this).children('.js-nav-text').show();
-				});
+		if ($vnav.hasClass('vnav-collapsed')) {
+			fncAnimate($(this), vnavMaxWidth, function() {
+				$(this).children('.js-nav-text').show();
+			});
 		}
-	}, function (e) {
+	}, function(e) {
 		// only animate if the nav bar is collapsed
-		if ($('.vnav').hasClass('vnav-collapsed')) {
+		if ($vnav.hasClass('vnav-collapsed')) {
 			$(this).children('.js-nav-text').hide();
-			$(this).stop(true).animate({
-				width: '100%'
-			}, 200);
+			fncAnimate($(this), '100%');
 		}
+	});
+
+	$('.vnav-dropdown').hover(function(e) {
+		var $dropdownContent = $(this).children('.vnav-dropdown-content');
+		var $dropdownText = $dropdownContent.children('a').children('.js-dropdown-text');
+		$dropdownText.hide();
+		$dropdownContent.css('display', 'block');
+		fncAnimate($dropdownContent, vnavMaxWidth, function() {
+			$dropdownText.show();
+		});
+	}, function(e) {
+		var $dropdownContent = $(this).children('.vnav-dropdown-content');	
+		var $dropdownText = $dropdownContent.children('a').children('.js-dropdown-text');
+		$dropdownText.hide();
+		fncAnimate($dropdownContent, '0px', function() {
+			$dropdownContent.css('display', 'none');
+		});
 	});
 });

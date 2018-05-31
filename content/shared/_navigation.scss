@@ -67,17 +67,18 @@ body {
     position: relative;
 }
 
-.vnav-dropdown:hover .vnav-dropdown-content {
+/* .vnav-dropdown:hover .vnav-dropdown-content {
     display: block; 
-}
+} */
 
 /* Dropdown Content (Hidden by Default) */
 .vnav-dropdown-content {
     display: none;
     position: absolute;		/* make the positioning absolute relative to the parent */
 	top: 0px;	/* be at the same height as the parent element */	
-    background-color: $nav-background-color; 
-    min-width: $nav-width-expanded;
+	background-color: $nav-background-color; 
+	width: 0px;
+    //min-width: $nav-width-expanded;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 	

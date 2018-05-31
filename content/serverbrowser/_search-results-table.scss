@@ -103,7 +103,7 @@ td>i{
     border-radius: 5px;
     padding-left: auto;
     padding-right: auto;
-    background-color: #0a0a0a;
+    background-color: $primary-background-color;
     &:hover {
         background-color: $sr-icon-bg-hover-color;
     }

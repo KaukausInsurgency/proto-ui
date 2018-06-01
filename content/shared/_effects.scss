@@ -1,15 +1,8 @@
-.glass{
-	/* background styles */
+%glass {
 	position: relative;
-	background-color: #333; /*for compatibility with older browsers*/
-	@include linear-gradient(background-image, rgb(10, 10, 10),rgb(34, 34, 34));
 	border-radius: 3px;
 	box-shadow: 0px 1px 4px -2px #333;
 	text-shadow: 0px -1px #333;
-
-	&:hover{
-		@include linear-gradient(background, rgb(48, 48, 48),rgb(65, 65, 65));
-	}
 
 	&:after{
 		content: '';
@@ -18,6 +11,37 @@
 		left: 2px;
 		width: calc(100% - 4px);
 		height: 50%;
+	}
+}
+
+$glass-black-color: rgb(17, 17, 17);
+$glass-red-color: rgb(82, 33, 33);
+
+
+.glass-black {
+	@extend %glass;
+	background-color: #333; /*for compatibility with older browsers*/
+	@include linear-gradient(background-image, $glass-black-color, lighten($glass-black-color, 24));
+
+	&:hover{
+		@include linear-gradient(background, lighten($glass-black-color, 38), lighten($glass-black-color, 55));
+	}
+
+	&:after{
+		@include linear-gradient(background, rgba(100, 100, 100, 0.4), rgba(100, 100, 100, 0.2));
+	}
+}
+
+.glass-red {
+	@extend %glass;
+	background-color: #333; /*for compatibility with older browsers*/
+	@include linear-gradient(background-image, $glass-red-color, lighten($glass-red-color, 24));
+
+	&:hover{
+		@include linear-gradient(background, lighten($glass-red-color, 38), lighten($glass-red-color, 55));
+	}
+
+	&:after{
 		@include linear-gradient(background, rgba(100, 100, 100, 0.4),rgba(100, 100, 100, 0.2));
 	}
 }

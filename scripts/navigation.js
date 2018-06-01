@@ -65,7 +65,7 @@ $(function () {
 		}
 	});
 
-
+	// when hovering over a elements on the vnav, animate the widths to look smooth, but only if the nav is collapsed
 	$('.vnav a').hover(function(e) {
 		// only animate if the nav bar is collapsed
 		if ($vnav.hasClass('vnav-collapsed')) {
@@ -84,7 +84,8 @@ $(function () {
 	$('.vnav-dropdown').hover(function(e) {
 		var $dropdownContent = $(this).children('.vnav-dropdown-content');
 		var $dropdownText = $dropdownContent.children('a').children('.js-dropdown-text');
-		$dropdownText.hide();
+		// hide the text first, other wise the text tries to display in the 0 width box and it makes the transition look janky
+		$dropdownText.hide();	
 		$dropdownContent.css('display', 'block');
 		fncAnimate($dropdownContent, vnavMaxWidth, function() {
 			$dropdownText.show();
@@ -92,6 +93,7 @@ $(function () {
 	}, function(e) {
 		var $dropdownContent = $(this).children('.vnav-dropdown-content');	
 		var $dropdownText = $dropdownContent.children('a').children('.js-dropdown-text');
+		// hide the text first, other wise the text tries to display in the 0 width box and it makes the transition look janky
 		$dropdownText.hide();
 		fncAnimate($dropdownContent, '0px', function() {
 			$dropdownContent.css('display', 'none');

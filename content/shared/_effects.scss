@@ -14,34 +14,39 @@
 	}
 }
 
-$glass-black-color: rgb(17, 17, 17);
-$glass-red-color: rgb(82, 33, 33);
+@mixin create-glass($col) {
+	background-color: $col; /*for compatibility with older browsers*/
+	@include linear-gradient(background-image, $col, lighten($col, 15));
 
-
-.glass-black {
-	@extend %glass;
-	background-color: #333; /*for compatibility with older browsers*/
-	@include linear-gradient(background-image, $glass-black-color, lighten($glass-black-color, 24));
-
-	&:hover{
-		@include linear-gradient(background, lighten($glass-black-color, 38), lighten($glass-black-color, 55));
+	&:hover {
+		@include linear-gradient(background, lighten($col, 12), lighten($col, 30));
 	}
 
-	&:after{
+	&:active {
+		@include linear-gradient(background, darken($col, 10), lighten($col, 14));
+	}
+
+	&:after {
 		@include linear-gradient(background, rgba(100, 100, 100, 0.4), rgba(100, 100, 100, 0.2));
 	}
 }
 
+.ss { color: rgb(58, 58, 58); }
+$glass-black-color: rgb(17, 17, 17);
+$glass-red-color: rgb(82, 33, 33);
+$glass-green-color: rgb(33, 82, 33);	
+
+.glass-black {
+	@extend %glass;
+	@include create-glass($glass-black-color);
+}
+
 .glass-red {
 	@extend %glass;
-	background-color: #333; /*for compatibility with older browsers*/
-	@include linear-gradient(background-image, $glass-red-color, lighten($glass-red-color, 24));
+	@include create-glass($glass-red-color);
+}
 
-	&:hover{
-		@include linear-gradient(background, lighten($glass-red-color, 38), lighten($glass-red-color, 55));
-	}
-
-	&:after{
-		@include linear-gradient(background, rgba(100, 100, 100, 0.4),rgba(100, 100, 100, 0.2));
-	}
+.glass-green {
+	@extend %glass;
+	@include create-glass($glass-green-color);
 }

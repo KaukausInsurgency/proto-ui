@@ -1,0 +1,104 @@
+%dashboard-line-after {
+    content: "";
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    height: 73%;
+    width: 4px;
+    background: palette(dark, 'light-mine-shaft');
+}
+
+.dashboard-main-title {
+    margin-bottom: 5px;
+    font-size: 1.4em;
+    padding-left: 1em;
+    padding-top: 25px;
+}
+
+.dashboard-section-heading {
+    font-size: 16px; 
+    margin-left: 7%; 
+    padding-bottom: 5px; 
+    display: block; 
+
+    &:after {
+        border-bottom: 1px solid palette(dark, 'dark');
+        content: '';
+        display: block;
+        margin-left: 25%;
+        width: 50%;
+    }
+}
+
+.dash-columns-eight {
+    float: left;
+    width: 12%;
+    position: relative;
+}
+
+.dash-columns-eight:after {
+    @extend %dashboard-line-after;
+}
+
+.dash-columns-four {
+    float: left;
+    width: 25%;
+    position: relative;
+}
+
+.dash-columns-four:after {
+    @extend %dashboard-line-after;
+}
+
+.dash-columns-three {
+    float: left;
+    width: 30%;
+    position: relative;
+}
+
+.dash-columns-three:after {
+    @extend %dashboard-line-after;
+}
+
+
+.dashboard-row {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 7%;
+    margin-right: 4%;
+    justify-content: flex-start;
+}
+
+/* Clear floats after the columns */
+.dashboard-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.dash-header {
+    line-height: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+.dash-header-large-font {
+    font-size: 22px;
+    font-weight: bold;
+    color: $secondary-font-color;
+}
+
+.dash-header-small-font {
+    font-size: 10px;
+    color: $primary-font-color;
+}
+
+
+
+
+.dash-background-color {
+    background-color: #474747;
+    margin-left: -4em;
+    margin-right: -4em;
+}

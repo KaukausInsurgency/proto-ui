@@ -21,7 +21,7 @@
         }
 
         function hideWindow(event) {
-            var $chatLayout = $(event.target).closest('.chat-layout');
+            var $chatLayout = $(event.target).closest('.live-map-footer-column');
             if (!$chatLayout.length) {
                 $('.chat-window').css('display', '');
             }

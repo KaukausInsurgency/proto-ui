@@ -34,6 +34,12 @@
     filter: contrast(.8) grayscale(.8) brightness(.7);
 }
 
+.header-image-statistics {
+    background-image: url("/static/bg-statistics.jpg");
+    background-size: cover;
+    filter: contrast(.8) grayscale(.8) brightness(.7);
+}
+
 .header-color {
     position: absolute;
     width: 100%;

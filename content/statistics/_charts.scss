@@ -1,0 +1,45 @@
+.chart-row {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+}
+
+#last-session, 
+#last-5-sessions {
+    width: 50%;
+    float: left;
+    position: relative;
+    height: 300px;
+    margin: 0 auto;
+}
+
+#airframe-chart,
+#score-chart,
+ {
+    width: 50%;
+    float: left;
+    position: relative;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.chart-layout-piecharts {
+    width: 52%; 
+    float:left; 
+    position:relative;
+}
+
+.chart-layout-gauges {
+    width: 48%; 
+    float:left; 
+    position:relative;
+}
+
+#sortie-success,
+#sling-success,
+#transport-success {
+    float: left;
+    width: 30%;
+    position: relative;
+    height: 190px;
+}

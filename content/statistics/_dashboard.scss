@@ -96,20 +96,32 @@
 }
 
 .dash-header-large-font {
-    font-size: 22px;
+    font-size: 1.3em;
     font-weight: bold;
     color: $secondary-font-color;
+
+    @media screen and (max-width: 1018px) {
+        font-size: 1.2em;
+    }
 }
 
 .dash-header-medium-font {
-    font-size: 19px;
+    font-size: 1em;
     font-weight: bold;
     color: $secondary-font-color;
+
+    @media screen and (max-width: 1018px) {
+        font-size: 0.9em;
+    }
 }
 
 .dash-header-small-font {
-    font-size: 10px;
+    font-size: 0.65em;
     color: $primary-font-color;
+
+    @media screen and (max-width: 1018px) {
+        font-size: 0.55em;
+    }
 }
 
 
@@ -120,3 +132,4 @@
     margin-left: -4em;
     margin-right: -4em;
 }
+

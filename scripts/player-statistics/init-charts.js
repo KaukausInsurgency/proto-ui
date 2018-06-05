@@ -1,6 +1,95 @@
 $(document).ready(function () {
-    var DayMonthYearFormat = '%e %b %Y';
-    var HourMinuteSecondsFormat = '%H:%M:%S';
+    var dayMonthYearFormat = '%e %b %Y';
+    var hourMinuteSecondsFormat = '%H:%M:%S';
+
+    var responsivePie = {
+        rules: [{
+            condition: {
+                maxWidth: 196
+            },
+            chartOptions: {
+                title: {
+                    style: {
+                        fontSize: '1.2em'
+                    },
+                },
+            }
+        }]
+    }
+
+    var responsiveGauges = {
+        rules: [{
+            condition: {
+                minWidth: 136
+            },
+            chartOptions: {
+                title: {
+                    style: {
+                        fontSize: '1.5em'
+                    },
+                    y: 165
+                },
+
+                tooltip: {
+                    style: {
+                        fontSize: '0.8em'
+                    },
+                    pointFormat: '{series.name}<br><span style="font-size:1.7em; color: {point.color}; font-weight: bold">{point.y}%</span>',
+                    positioner: function (labelWidth) {
+                        return {
+                            x: (this.chart.chartWidth - labelWidth) / 2,
+                            y: (this.chart.plotHeight / 2) - 25
+                        };
+                    },
+                },
+
+                pane: {
+                    size: 130,
+                },
+
+                plotOptions: {
+                    solidgauge: {
+                        borderWidth: '16px',
+                    }
+                },
+            }
+        }, {
+            condition: {
+                maxWidth: 135
+            },
+            chartOptions: {
+                title: {
+                    style: {
+                        fontSize: '1.2em'
+                    },
+                    y: 165
+                },
+
+                tooltip: {
+                    style: {
+                        fontSize: '0.8em'
+                    },
+                    pointFormat: '{series.name}<br><span style="font-size:1.5em; color: {point.color}; font-weight: bold">{point.y}%</span>',
+                    positioner: function (labelWidth) {
+                        return {
+                            x: (this.chart.chartWidth - labelWidth) / 2,
+                            y: (this.chart.plotHeight / 2) - 25
+                        };
+                    },
+                },
+
+                pane: {
+                    size: 100,
+                },
+
+                plotOptions: {
+                    solidgauge: {
+                        borderWidth: '12px',
+                    }
+                },
+            }
+        }]
+    }
 
 
     Highcharts.chart('hc-last-session', {
@@ -476,7 +565,6 @@ $(document).ready(function () {
                     0,
                     6
                 ],
-                "_colorIndex": 0
             },
             {
                 "name": "TAKEOFF",
@@ -487,7 +575,6 @@ $(document).ready(function () {
                     4,
                     2
                 ],
-                "_colorIndex": 1
             },
             {
                 "name": "LAND",
@@ -498,7 +585,6 @@ $(document).ready(function () {
                     4,
                     2
                 ],
-                "_colorIndex": 2
             }
         ]
     });
@@ -546,6 +632,7 @@ $(document).ready(function () {
         credits: {
             enabled: false
         },
+        responsive: responsivePie,
         series: [{
             name: 'Airframe',
             colorByPoint: true,
@@ -617,6 +704,7 @@ $(document).ready(function () {
         credits: {
             enabled: false
         },
+        responsive: responsivePie,
         series: [{
             name: 'Score',
             colorByPoint: true,
@@ -720,6 +808,8 @@ $(document).ready(function () {
             enabled: false
         },
 
+        responsive: responsiveGauges,
+
         series: [{
             name: 'Success',
             borderColor: Highcharts.getOptions().colors[3],
@@ -822,6 +912,8 @@ $(document).ready(function () {
             enabled: false
         },
 
+        responsive: responsiveGauges,
+
         series: [{
             name: 'Success',
             borderColor: Highcharts.getOptions().colors[2],
@@ -920,6 +1012,8 @@ $(document).ready(function () {
             enabled: false
         },
 
+        responsive: responsiveGauges,
+
         series: [{
             name: 'Success',
             borderColor: Highcharts.getOptions().colors[0],
@@ -991,7 +1085,7 @@ $(document).ready(function () {
                 month: null,
                 year: null,
                 hour: '%H:%M',
-                minute: HourMinuteSecondsFormat
+                minute: hourMinuteSecondsFormat
             }
         },
 
@@ -1001,18 +1095,18 @@ $(document).ready(function () {
             },
             type: 'datetime',
             dateTimeLabelFormats: {
-                day: DayMonthYearFormat
+                day: dayMonthYearFormat
             }
         },
 
         tooltip: {
             dateTimeLabelFormats: {
                 hour: '%H:%M',
-                minute: HourMinuteSecondsFormat,
+                minute: hourMinuteSecondsFormat,
                 minTickInterval: 3600 * 1000
             },
             formatter: function () {
-                return Highcharts.dateFormat(HourMinuteSecondsFormat, this.y) + '<br/>' + Highcharts.dateFormat(DayMonthYearFormat, this.x);
+                return Highcharts.dateFormat(hourMinuteSecondsFormat, this.y) + '<br/>' + Highcharts.dateFormat(dayMonthYearFormat, this.x);
             }
         },
 
@@ -1147,18 +1241,18 @@ $(document).ready(function () {
             },
             type: 'datetime',
             dateTimeLabelFormats: {
-                day: DayMonthYearFormat
+                day: dayMonthYearFormat
             }
         },
 
         tooltip: {
             dateTimeLabelFormats: {
                 hour: '%H:%M',
-                minute: HourMinuteSecondsFormat,
+                minute: hourMinuteSecondsFormat,
                 minTickInterval: 3600 * 1000
             },
             formatter: function () {
-                return Highcharts.dateFormat(DayMonthYearFormat, this.x) + '<br/>' +
+                return Highcharts.dateFormat(dayMonthYearFormat, this.x) + '<br/>' +
                     'Sorties: ' + this.y + '<br/>' +
                     'Kills: ' + this.point.kills + '<br/>' +
                     'Deaths: ' + this.point.deaths;
@@ -1558,18 +1652,18 @@ $(document).ready(function () {
             },
             type: 'datetime',
             dateTimeLabelFormats: {
-                day: DayMonthYearFormat
+                day: dayMonthYearFormat
             }
         },
 
         tooltip: {
             dateTimeLabelFormats: {
                 hour: '%H:%M',
-                minute: HourMinuteSecondsFormat,
+                minute: hourMinuteSecondsFormat,
                 minTickInterval: 3600 * 1000
             },
             formatter: function () {
-                return Highcharts.dateFormat(DayMonthYearFormat, this.x) + '<br/>' +
+                return Highcharts.dateFormat(dayMonthYearFormat, this.x) + '<br/>' +
                     'Count: ' + this.y
             }
         },

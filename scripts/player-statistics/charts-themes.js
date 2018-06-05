@@ -24,13 +24,15 @@ $(document).ready(function () {
         title: {
             style: {
                 color: '#CACAC4',
-                font: '1.5em "Roboto",sans-serif'
+                font: '"Roboto",sans-serif',
+                fontSize: '1.5em'
             }
         },
         subtitle: {
             style: {
                 color: '#DDD',
-                font: '0.9em "Roboto",sans-serif'
+                font: '"Roboto",sans-serif',
+                fontSize: '0.9em'
             }
         },
         xAxis: {

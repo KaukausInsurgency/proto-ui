@@ -89,18 +89,27 @@
   margin-left: 10px; }
 
 .dash-header-large-font {
-  font-size: 22px;
+  font-size: 1.3em;
   font-weight: bold;
   color: #ebebeb; }
+  @media screen and (max-width: 1018px) {
+    .dash-header-large-font {
+      font-size: 1.2em; } }
 
 .dash-header-medium-font {
-  font-size: 19px;
+  font-size: 1em;
   font-weight: bold;
   color: #ebebeb; }
+  @media screen and (max-width: 1018px) {
+    .dash-header-medium-font {
+      font-size: 0.9em; } }
 
 .dash-header-small-font {
-  font-size: 10px;
+  font-size: 0.65em;
   color: #CACAC4; }
+  @media screen and (max-width: 1018px) {
+    .dash-header-small-font {
+      font-size: 0.55em; } }
 
 .dash-background-color {
   background-color: #474747;
@@ -143,6 +152,19 @@
 #hc-last-5-sessions {
   padding-left: 10px; }
 
+@media screen and (max-width: 930px) {
+  #hc-last-session,
+  #hc-last-5-sessions {
+    width: 100%;
+    float: none;
+    padding-right: 0px;
+    padding-left: 0px; }
+
+  #hc-last-session {
+    padding-bottom: 10px; }
+
+  #hc-last-5-sessions {
+    padding-top: 10px; } }
 #hc-airframes-pie,
 #hc-score-pie {
   width: 50%;
@@ -151,18 +173,37 @@
   height: 220px;
   margin: 0 auto;
   padding-top: 6px; }
+  @media screen and (max-width: 450px) {
+    #hc-airframes-pie,
+    #hc-score-pie {
+      width: 100%;
+      float: none;
+      padding-bottom: 10px;
+      padding-top: 10px; } }
 
 .chart-layout-piecharts {
   width: 50%;
   float: left;
   position: relative;
   padding-right: 10px; }
+  @media screen and (max-width: 740px) {
+    .chart-layout-piecharts {
+      width: 100%;
+      float: none;
+      padding-right: 0px;
+      padding-bottom: 10px; } }
 
 .chart-layout-gauges {
   width: 50%;
   float: left;
   position: relative;
   padding-left: 10px; }
+  @media screen and (max-width: 740px) {
+    .chart-layout-gauges {
+      width: 100%;
+      float: none;
+      padding-left: 0px;
+      padding-top: 10px; } }
 
 #hc-sortie-success,
 #hc-sling-success,

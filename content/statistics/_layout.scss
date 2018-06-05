@@ -1,9 +1,20 @@
 .dashboard-layout {
     background-color: #474747;
-    margin-left: -4em;
-    margin-right: -4em;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .chart-layout {
-    
+    overflow: hidden;
+}
+
+.left-margin-inner {
+    margin-left: 10px;
+}
+
+.right-margin-inner {
+    margin-right: 10px;
 }

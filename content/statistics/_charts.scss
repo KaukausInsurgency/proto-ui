@@ -1,11 +1,30 @@
+$chart-bg-grad1-color: rgb(56, 56, 56);
+$chart-bg-grad2-color: rgb(78, 78, 78);
+
 .chart-row {
+    margin-top: 10px;
+    margin-bottom: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
-#last-session, 
-#last-5-sessions {
+.chart-columns-2 {
+    width: 50%;
+    float: left;
+    height: 200px;
+}
+
+.chart-background {
+    @include linear-gradient(background, #{$chart-bg-grad2-color}, #{$chart-bg-grad1-color});
+    border-width: 0px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#hc-last-session, 
+#hc-last-5-sessions {
     width: 50%;
     float: left;
     position: relative;
@@ -13,33 +32,44 @@
     margin: 0 auto;
 }
 
-#airframe-chart,
-#score-chart,
+#hc-last-session {
+    padding-right: 10px;
+}
+
+#hc-last-5-sessions {
+    padding-left: 10px;
+}
+
+#hc-airframes-pie,
+#hc-score-pie,
  {
     width: 50%;
     float: left;
     position: relative;
-    height: 200px;
+    height: 220px;
     margin: 0 auto;
+    padding-top: 6px;
 }
 
 .chart-layout-piecharts {
-    width: 52%; 
+    width: 50%; 
     float:left; 
     position:relative;
+    padding-right: 10px;
 }
 
 .chart-layout-gauges {
-    width: 48%; 
+    width: 50%; 
     float:left; 
     position:relative;
+    padding-left: 10px;
 }
 
-#sortie-success,
-#sling-success,
-#transport-success {
+#hc-sortie-success,
+#hc-sling-success,
+#hc-transport-success {
     float: left;
-    width: 30%;
+    width: 33.33333333%;
     position: relative;
-    height: 190px;
+    height: 200px;
 }

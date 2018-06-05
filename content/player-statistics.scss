@@ -3,7 +3,7 @@
 @import 'statistics/layout';
 @import 'statistics/dashboard';
 @import 'statistics/charts';
-@import 'statistics/airframe-table';
+@import 'statistics/stats-table';
 
 
     hr {
@@ -19,6 +19,7 @@
 
     h3 {
         font-size: 19px;
+        text-align: center;
     }
 
 

@@ -136,24 +136,6 @@ $(document).ready(function () {
                     }
                 },
                 rangeSelector: {
-                    enabled: true,
-                    allButtonsEnabled: true,
-                    buttons: [{
-                        type: 'week',
-                        count: 1,
-                        text: 'Week',
-                    }, {
-                        type: 'month',
-                        count: 1,
-                        text: 'Month',
-                    }, {
-                        type: 'year',
-                        count: 1,
-                        text: 'Year'
-                    }, {
-                        type: 'all',
-                        text: 'All'
-                    }],
                     buttonTheme: {
                         width: 30,
                         style: {
@@ -694,9 +676,6 @@ $(document).ready(function () {
         },
         title: {
             text: 'Top 5 Airframes',
-            style: {
-                fontSize: '18px'
-            }
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -766,9 +745,6 @@ $(document).ready(function () {
         },
         title: {
             text: 'Score',
-            style: {
-                fontSize: '18px'
-            }
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'

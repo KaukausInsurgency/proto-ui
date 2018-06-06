@@ -102,6 +102,43 @@ $(document).ready(function () {
         }]
     }
 
+    var responsiveLineGraphs = {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                title: {
+                    style: {
+                        fontSize: '1.3em'
+                    }
+                },
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom',
+                    itemStyle: {
+                        fontSize: '7px'
+                    }
+                },
+                xAxis: {
+                    title: {
+                        style: {
+                            fontSize: '10px'
+                        }
+                    }
+                },
+                yAxis: {
+                    title: {
+                        style: {
+                            fontSize: '10px'
+                        }
+                    }
+                },
+            }
+        }]
+    }
+
 
     // workaround to graphical glitches in highcharts line graphs that add negative fill color when mousing over
     // this appears to only happen in chrome with certain GPUs
@@ -169,7 +206,10 @@ $(document).ready(function () {
         legend: {
             layout: 'vertical',
             align: 'right',
-            verticalAlign: 'middle'
+            verticalAlign: 'middle',
+            itemStyle: {
+                fontSize: '10px'
+            }
         },
 
         plotOptions: {
@@ -186,6 +226,8 @@ $(document).ready(function () {
                 },
             }
         },
+
+        responsive: responsiveLineGraphs,
 
         series: [
             {
@@ -513,21 +555,6 @@ $(document).ready(function () {
                 "_symbolIndex": 2
             }
         ],
-
-        responsive: {
-            rules: [{
-                condition: {
-                    maxWidth: 500
-                },
-                chartOptions: {
-                    legend: {
-                        layout: 'horizontal',
-                        align: 'center',
-                        verticalAlign: 'bottom'
-                    }
-                }
-            }]
-        },
 
         exporting: { enabled: false },
         credits: {
@@ -1174,21 +1201,7 @@ $(document).ready(function () {
             }
         ],
 
-        responsive: {
-            rules: [{
-                condition: {
-                    maxWidth: 500
-                },
-                chartOptions: {
-                    legend: {
-                        layout: 'horizontal',
-                        align: 'center',
-                        verticalAlign: 'bottom'
-                    }
-                }
-            }]
-        },
-
+        responsive: responsiveLineGraphs,
         exporting: { enabled: false },
         credits: {
             enabled: false
@@ -1589,21 +1602,7 @@ $(document).ready(function () {
 
         ],
 
-        responsive: {
-            rules: [{
-                condition: {
-                    maxWidth: 500
-                },
-                chartOptions: {
-                    legend: {
-                        layout: 'horizontal',
-                        align: 'center',
-                        verticalAlign: 'bottom'
-                    }
-                }
-            }]
-        },
-
+        responsive: responsiveLineGraphs,
         exporting: { enabled: false },
         credits: {
             enabled: false
@@ -1973,21 +1972,7 @@ $(document).ready(function () {
             }
         ],
 
-        responsive: {
-            rules: [{
-                condition: {
-                    maxWidth: 500
-                },
-                chartOptions: {
-                    legend: {
-                        layout: 'horizontal',
-                        align: 'center',
-                        verticalAlign: 'bottom'
-                    }
-                }
-            }]
-        },
-
+        responsive: responsiveLineGraphs,
         exporting: { enabled: false },
         credits: {
             enabled: false

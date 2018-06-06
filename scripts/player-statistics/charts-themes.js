@@ -48,7 +48,9 @@ $(document).ready(function () {
             title: {
                 style: {
                     color: '#AAA',
-                    font: 'bold 12px "Roboto",sans-serif'
+                    fontWeight: 'bold',
+                    fontSize: '12px',
+                    fontFamily: '"Roboto",sans-serif'
                 }
             }
         },
@@ -67,7 +69,9 @@ $(document).ready(function () {
             title: {
                 style: {
                     color: '#AAA',
-                    font: 'bold 12px "Roboto",sans-serif'
+                    fontWeight: 'bold',
+                    fontSize: '12px',
+                    fontFamily: '"Roboto",sans-serif'
                 }
             }
         },

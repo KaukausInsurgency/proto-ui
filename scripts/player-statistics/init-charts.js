@@ -135,6 +135,33 @@ $(document).ready(function () {
                         }
                     }
                 },
+                rangeSelector: {
+                    enabled: true,
+                    allButtonsEnabled: true,
+                    buttons: [{
+                        type: 'week',
+                        count: 1,
+                        text: 'Week',
+                    }, {
+                        type: 'month',
+                        count: 1,
+                        text: 'Month',
+                    }, {
+                        type: 'year',
+                        count: 1,
+                        text: 'Year'
+                    }, {
+                        type: 'all',
+                        text: 'All'
+                    }],
+                    buttonTheme: {
+                        width: 30,
+                        style: {
+                            fontSize: '10px'
+                        }
+                    },
+                    selected: 2
+                },
             }
         }]
     }

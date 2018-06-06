@@ -2,6 +2,14 @@ $(document).ready(function () {
     var dayMonthYearFormat = '%e %b %Y';
     var hourMinuteSecondsFormat = '%H:%M:%S';
 
+    var gaugesTooltipRender = function(sel) {
+        var chart = $(sel).highcharts(),
+        point = chart.series[0].points[0];
+        point.onMouseOver(); // Show the hover marker
+        chart.tooltip.refresh(point); // Show the tooltip
+        chart.tooltip.hide = function () { console.log() };
+    }
+
     var responsivePie = {
         rules: [{
             condition: {
@@ -19,9 +27,7 @@ $(document).ready(function () {
 
     var responsiveGauges = {
         rules: [{
-            condition: {
-                minWidth: 136
-            },
+            condition: { minWidth: 136 },
             chartOptions: {
                 title: {
                     style: {
@@ -31,9 +37,11 @@ $(document).ready(function () {
                 },
 
                 tooltip: {
+                    enabled: true,
                     style: {
                         fontSize: '0.8em'
                     },
+                    
                     pointFormat: '{series.name}<br><span style="font-size:1.7em; color: {point.color}; font-weight: bold">{point.y}%</span>',
                     positioner: function (labelWidth) {
                         return {
@@ -41,6 +49,7 @@ $(document).ready(function () {
                             y: (this.chart.plotHeight / 2) - 25
                         };
                     },
+                    
                 },
 
                 pane: {
@@ -66,16 +75,18 @@ $(document).ready(function () {
                 },
 
                 tooltip: {
+                    enabled: true,
                     style: {
                         fontSize: '0.8em'
                     },
+                   
                     pointFormat: '{series.name}<br><span style="font-size:1.5em; color: {point.color}; font-weight: bold">{point.y}%</span>',
                     positioner: function (labelWidth) {
                         return {
                             x: (this.chart.chartWidth - labelWidth) / 2,
                             y: (this.chart.plotHeight / 2) - 25
                         };
-                    },
+                    },    
                 },
 
                 pane: {
@@ -92,6 +103,8 @@ $(document).ready(function () {
     }
 
 
+    // workaround to graphical glitches in highcharts line graphs that add negative fill color when mousing over
+    // this appears to only happen in chrome with certain GPUs
     Highcharts.wrap(Highcharts.Series.prototype, 'drawGraph', function (proceed) {
         var lineWidth;
     
@@ -817,7 +830,7 @@ $(document).ready(function () {
                 linecap: 'square',
                 stickyTracking: false,
                 rounded: true
-            }
+            },
         },
 
         exporting: { enabled: false },
@@ -839,14 +852,6 @@ $(document).ready(function () {
             }]
         }],
     });
-
-    var chart = $('#hc-sortie-success').highcharts(),
-        point = chart.series[0].points[0];
-    point.onMouseOver(); // Show the hover marker
-    chart.tooltip.refresh(point); // Show the tooltip
-    chart.tooltip.hide = function () { console.log() };
-
-
 
 
 
@@ -944,11 +949,7 @@ $(document).ready(function () {
         }]
     });
 
-    var chart = $('#hc-sling-success').highcharts(),
-        point = chart.series[0].points[0];
-    point.onMouseOver(); // Show the hover marker
-    chart.tooltip.refresh(point); // Show the tooltip
-    chart.tooltip.hide = function () { console.log() };
+    
 
 
     Highcharts.chart('hc-transport-success', {
@@ -1044,11 +1045,9 @@ $(document).ready(function () {
         }]
     });
 
-    var chart = $('#hc-transport-success').highcharts(),
-        point = chart.series[0].points[0];
-    point.onMouseOver(); // Show the hover marker
-    chart.tooltip.refresh(point); // Show the tooltip
-    chart.tooltip.hide = function () { console.log() };
+    gaugesTooltipRender('#hc-sortie-success');
+    gaugesTooltipRender('#hc-sling-success');
+    gaugesTooltipRender('#hc-transport-success');
 
 
 
@@ -1995,4 +1994,39 @@ $(document).ready(function () {
         },
 
     });
+
+
+    // special callback function that checks if a circe gauge graph has hit a responsive breakpoint
+    // currently when the breakpoint on these charts is hit - the tooltip content disappears
+    // this is because highcharts calls the hide() function on the tooltip
+    // we need to force show the tooltip again after highcharts has finished redrawing the chart
+    // because we cant control if our handler is the last to be called 
+    // (we need highcharts to finish rendering first)
+    // we fire off the re-render function in an async function that waits 1 second before rendering
+    function sleep(duration) {
+        return new Promise((resolve) => setTimeout(resolve, duration));
+    }
+
+    async function delayRenderGaugeTooltip($el) {
+        await sleep(1000);
+        gaugesTooltipRender($el);  
+    }
+
+    $(window).on('resize', function(){
+        $('#hc-sortie-success, #hc-sling-success, #hc-transport-success').each(function() {
+            var $this = $(this);
+
+            // if this div has not had it's breakpoint hit yet, rerender the tooltip content
+            if ($this.width() <= 135 && !$this.hasClass('js-breakpoint')) {
+                $this.addClass('js-breakpoint');
+                delayRenderGaugeTooltip($this);
+                
+            }
+            else if ($this.width() > 135 && $this.hasClass('js-breakpoint')) {
+                $this.removeClass('js-breakpoint');
+                delayRenderGaugeTooltip($this);
+            }
+        })
+    });
+    
 });

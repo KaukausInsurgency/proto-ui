@@ -38,6 +38,27 @@
     &:after {
         @extend %dashboard-line-after;
     }
+
+    // break into floating 4 items per line
+    @media screen and (max-width: 880px) {
+        width: 25%;
+
+        &:nth-child(4)::after {
+            clear: left;
+        }
+    }
+
+    // break into floating 4 items per line
+    @media screen and (max-width: 570px) {
+        width: 50%;
+
+        &:nth-child(2)::after,
+        &:nth-child(4)::after,
+        &:nth-child(6)::after,
+        &:nth-child(8)::after {
+            clear: left;
+        }
+    }
 }
 
 .dash-columns-four {
@@ -48,6 +69,15 @@
     &:after {
         @extend %dashboard-line-after;
     }
+
+    // break into floating 2 items per line
+    @media screen and (max-width: 450px) {
+        width: 50%;
+
+        &:nth-child(2)::after {
+            clear: left;
+        }
+    }
 }
 
 .dash-columns-three {
@@ -57,6 +87,15 @@
 
     &:after {
         @extend %dashboard-line-after;
+    }
+
+     // break into floating 2 items per line
+     @media screen and (max-width: 450px) {
+        width: 50%;
+
+        &:nth-child(2)::after {
+            clear: left;
+        }
     }
 }
 
@@ -73,6 +112,18 @@
         display: table;
         clear: both;
     }
+
+    // reduce margin size
+    @media screen and (max-width: 880px) {
+        margin-left: 1.8em;
+        margin-right: 1.8em;
+    }
+
+    // break into floating 4 items per line
+    @media screen and (max-width: 570px) {
+        margin-left: 1.5em;
+        margin-right: 1.5em;
+    }
 }
 
 .dashboard-background-columns-2 {
@@ -86,6 +137,19 @@
     &:nth-child(2) {
         margin-left: 1%;
     }   
+
+    // break the flow into 2 seperate rows
+    @media screen and (max-width: 724px) {
+        width: 100%;
+        float: none;
+        &:nth-child(1) {
+            margin-right: 0%;
+        }
+    
+        &:nth-child(2) {
+            margin-left: 0%;
+        }   
+    }
 }
 
 .dash-header {

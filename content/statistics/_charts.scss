@@ -2,10 +2,8 @@ $chart-bg-grad1-color: rgb(56, 56, 56);
 $chart-bg-grad2-color: rgb(78, 78, 78);
 
 .chart-row {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -14,11 +12,6 @@ $chart-bg-grad2-color: rgb(78, 78, 78);
     width: 50%;
     float: left;
     height: 200px;
-
-    @media screen and (max-width: 716px) {
-        width: 100%;
-        float: none;
-    }
 }
 
 .chart-background {
@@ -26,103 +19,4 @@ $chart-bg-grad2-color: rgb(78, 78, 78);
     border-width: 0px;
     border-radius: 15px;
     overflow: hidden;
-}
-
-#hc-last-session, 
-#hc-last-5-sessions {
-    width: 50%;
-    float: left;
-    position: relative;
-    height: 300px;
-    margin: 0 auto;
-}
-
-#hc-last-session {
-    padding-right: 10px;
-}
-
-#hc-last-5-sessions {
-    padding-left: 10px;
-}
-
-@media screen and (max-width: 930px) {
-    #hc-last-session, 
-    #hc-last-5-sessions {
-        width: 100%;
-        float: none;
-        padding-right: 0px;
-        padding-left: 0px;
-    }
-
-    #hc-last-session {
-        padding-bottom: 10px;
-    }
-    
-    #hc-last-5-sessions {
-        padding-top: 10px;
-    }
-}
-
-#hc-airframes-pie,
-#hc-score-pie,
- {
-    width: 50%;
-    float: left;
-    position: relative;
-    height: 220px;
-    margin: 0 auto;
-    padding-top: 6px;
-
-    @media screen and (max-width: 450px) {
-        width: 100%;
-        float: none;
-        padding-bottom: 10px;
-        padding-top: 10px;
-    }
-}
-
-.chart-layout-piecharts {
-    width: 50%; 
-    float: left; 
-    position: relative;
-    padding-right: 10px;
-
-    @media screen and (max-width: 740px) {
-        width: 100%;
-        float: none;
-        padding-right: 0px;
-        padding-bottom: 10px;
-    }
-}
-
-.chart-layout-gauges {
-    width: 50%; 
-    float:left; 
-    position:relative;
-    padding-left: 10px;
-
-    @media screen and (max-width: 740px) {
-        width: 100%;
-        float: none;
-        padding-left: 0px;
-        padding-top: 10px;
-    }
-}
-
-#hc-sortie-success,
-#hc-sling-success,
-#hc-transport-success {
-    float: left;
-    width: 33.33333333%;
-    position: relative;
-    height: 200px;
-}
-
-.gauge-font {
-    font-size: 1.7em;
-    font-weight: bold;
-
-    @media screen and (max-width: 886px) {
-        font-size: 1.4em;
-    }
 }

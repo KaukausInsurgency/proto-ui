@@ -35,3 +35,7 @@ content/reset.min.css
 content/server-browser.min.css
 scripts/dash.min.js
 scripts/navigation.min.js
+content/airframe-statistics.css
+content/player-statistics.css
+content/player-statistics.min.css
+scripts/airframe-statistics/init-charts.min.js

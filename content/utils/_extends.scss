@@ -9,5 +9,12 @@
 	display: flex;
 }
 
+%clear-float {
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
 
 
